@@ -8,6 +8,10 @@
 <main>
 	<h1>Zona Alfa</h1>
 	<Crews/>
+	<div>
+    Favicon made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+  </div>
 </main>
 
 <style>
