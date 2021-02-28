@@ -31,4 +31,4 @@ jobs:
       with:
         branch: main # The branch the action should deploy to.
         folder: public # The folder the action should deploy.
-        repository-name: ozsie.github.io
+        repository-name: Ozsie/ozsie.github.io
