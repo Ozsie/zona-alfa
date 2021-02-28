@@ -36,7 +36,7 @@
 		<li>
 			<img on:click={() => editCrew(eCrew)} src="./edit.png" width=16 alt="Edit"/>
 			<img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
-			<span on:click={() => viewCrew(eCrew)}>{eCrew.name} ({eCrew.k} K)</span>
+			<a on:click={() => viewCrew(eCrew)} on:>{eCrew.name} ({eCrew.k} K)</a>
 		</li>
 	{/each}
 </ul>
