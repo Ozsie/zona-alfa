@@ -1,0 +1,52 @@
+[
+  {
+    "id": 0,
+    "name": "Bone Doc",
+    "description": "Probably attended Med-school for a semester or had some combat medic training in the military, a Bone Doc can doublr up on Med-Kits when assigning them in the Equipment Slots, meaning that two can be carried per slot. When a Bone Doc applies a Med-Kit to himself or Allied unit, the Wound is replaced with one Pinned Counter rather than two."
+  },
+  {
+    "id": 1,
+    "name": "Fuse Cutter",
+    "description": "The explosives expert, the Fuse Cutter can carry up to three Hand Grenades, Molotov Cocktails or Satchel Charges, instead of the standard two. The Fuse Cutter also receives a +2 to all Explosives-related Skill Checks like de-fusing an IED or booby-trapped door."
+  },
+  {
+    "id": 2,
+    "name": "Hard",
+    "description": "Walking that fine line between bravery and stupidity, this character ignores their first Pinned result and always receives a +1 bonus to their Will Stat when rolling for Deflected Hits."
+  },
+  {
+    "id": 3,
+    "name": "Hustle",
+    "description": "Quick on their feet, whenever this model spends two consecutive actions to move, they receive an extra 2\" to the total. So a Hardened trooper can move 14\" with two back-to-back Move Actions rather than the standard 12\"."
+  },
+  {
+    "id": 4,
+    "name": "Knife Man",
+    "description": "Knife men function best up close and personal. They receive a +1 to all Melee Combat rolls and, if appropriately armed, may fire/use two Melee weapons in close combat for one Action."
+  },
+  {
+    "id": 5,
+    "name": "Leader",
+    "description": "Leaders grant a +1 bonus to Will/Rally rolls for allied units in Line of Sight to the leader figure. Leaders also have a special 'Order' Action that allows them to 'transfer' their Actions to other members of their squad. The recepient must be within 12\" and in Line of Sight of the Leader figure, and must immediately perform the Ordered Action. Any effects of this transferred Action/s must be taken and resolved before the Leader can perform any more Actions."
+  },
+  {
+    "id": 6,
+    "name": "Scrounger",
+    "description": "Some guys have a knack for finding stuff. Scroungers can Search a Hot Spot twice instead of just once. Each Search is a separate Action, but they double your chance at finding something useful."
+  },
+  {
+    "id": 7,
+    "name": "Steady Hands",
+    "description": "Maybe their grandfather took them hunting, perhaps they received some special Military training, either way, these shooters get a +1 to all Ranged Attack rolls. This Ability stack with the Aim bonus modifiers and any appropriate Gear."
+  },
+  {
+    "id": 8,
+    "name": "Unload",
+    "description": "When this model spends to consecutive Actions on a Ranged Attack with an appropriate ranged combat weapon, such as an Assault Rife, against a single target, it adds two bonus dice to the combined Firepower roll. Unload represents the model emptying the weapons' magazine in one go. After using the Unload ability, the model must spend 1 Actionb to 'reaload' the weapon before it can be fired again."
+  },
+  {
+    "id": 9,
+    "name": "Wrench",
+    "description": "This is the one who's always tinkering with the GAZ engine, modding the gas tube on their AK, or jury rigging the camp stove. Handy with anything mechanical, a Wrench gets a +2 to any Mechanical-Related Skill checks."
+  }
+]

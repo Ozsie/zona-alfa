@@ -1,0 +1,107 @@
+[
+  {
+    "id": 0,
+    "category": "basic",
+    "name": "Binoculars",
+    "description": "+12\" to Inspect range when surveying Hot Spots or Mission Objectives.",
+    "value": 200
+  },
+  {
+    "id": 1,
+    "category": "basic",
+    "name": "Electric Juice",
+    "description": "Immediately grants 2 additional actions. Only 1 action allowed the following turn.",
+    "value": 100
+  },
+  {
+    "id": 2,
+    "category": "basic",
+    "name": "Gas Mask",
+    "description": "No Will check required for Smoke or Fumes.",
+    "value": 200
+  },
+  {
+    "id": 3,
+    "category": "basic",
+    "name": "Med-Kit",
+    "description": "Replace 1 Wound with 2 Pinned. If used by Bone Doc, replace 1 Wound with 1 Pinned.",
+    "value": 250
+  },
+  {
+    "id": 4,
+    "category": "basic",
+    "name": "Red Dot Sight",
+    "description": "For Pistols, SMGs, Shotguns and Assault Rifles. +1 to Ranged Attack Combat Ability Roll at half the weapon's effective range or less.",
+    "value": 400
+  },
+  {
+    "id": 5,
+    "category": "advanced",
+    "name": "Detector",
+    "description": "+2 to Will Check when Searching an Anomaly.",
+    "value": 500
+  },
+  {
+    "id": 6,
+    "category": "advanced",
+    "name": "Tool Kit",
+    "description": "+2 to all Mechanical Skill Checks and -1 to Action cost.",
+    "value": 600
+  },
+  {
+    "id": 7,
+    "category": "advanced",
+    "name": "NODs",
+    "description": "Negates Dark and Low Light LOS and Ranged Attack Penalties.",
+    "value": 750
+  },
+  {
+    "id": 8,
+    "category": "advanced",
+    "name": "Hot Load Ammo",
+    "description": "Ranged Weapon only. +1 to Weapon Damage. Enough for 1 mission.",
+    "value": 350
+  },
+  {
+    "id": 9,
+    "category": "advanced",
+    "name": "Scope",
+    "description": "Assault Rifles, Battle Rifles and Sniper Rifles only. +1 to Ranged Combat Ability Rolls at greater than half the weapons effective range.",
+    "value": 750
+  },
+  {
+    "id": 10,
+    "category": "special",
+    "name": "Chest Rig",
+    "description": "+1 Grenade Slot and +1 Equipment Slot.",
+    "value": 1000
+  },
+  {
+    "id": 11,
+    "category": "special",
+    "name": "Load Bearing West",
+    "description": "+2 Grenade Slot and +2 Equipment Slot.",
+    "value": 1500
+  },
+  {
+    "id": 12,
+    "category": "special",
+    "name": "Under Barrel Grenade Launcher",
+    "description": "Assault Rifles only. Adds a 40mm Grenade Launcher Option to a character's weapon.",
+    "value": 1800
+  },
+  {
+    "id": 13,
+    "category": "special",
+    "name": "Kevlar Plates",
+    "description": "+1 to Characters Armor Rating. Can be added twice per crew member.",
+    "value": 1800
+  },
+  {
+    "id": 14,
+    "category": "special",
+    "name": "Heavy Weapon Reload",
+    "description": "+5 ammo of any single type of Limited Ammo weapon.",
+    "value": 2000
+  }
+]

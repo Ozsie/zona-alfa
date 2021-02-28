@@ -1,0 +1,132 @@
+[
+  {
+    "id": 0,
+    "name": "Military",
+    "description": "The Zone Enforcement Unit is tasked with containing the Zone and interdicting the flow of illegal Salvage and dangerous artifacts. Ironic as it's the Military that secretly allows and assists in the flow of said items. Military Crews start with three free pieces of Equipment: two Red Dot Sights and one load of Hot Load Ammo. They get a 20% discount when purchasing new Weapons, and can recruit Rookies at 25% less of the normal price later in the game.",
+    "allies": [1],
+    "enemies": [2,4],
+    "discounts": [
+      {
+        "type": "Weapon",
+        "value": 20,
+        "times": -1
+      },
+      {
+        "type": "Rookie recruit",
+        "value": 25,
+        "times": -1
+      }
+    ],
+    "startingEquipment": [4, 4, 8]
+  },
+  {
+    "id": 1,
+    "name": "Scientists",
+    "description": "Affiliated with the government and several large private research agencies, the Scientist faction studies the Zone, hoping to understand - and control - its causes and effects. Although technically protected by the military's Zone Enforcement Unit, they  frequently hire teams to perform elemental research in dangerous areas, run errands, and provide security. Scientist crews start with a free Detector, one free Med-Kit and one free Tool Kit. They receive a 25% discount when purchasing Med-Kits, Tool Kits, Gas Masks and Binoculars at The Stalls, and can hire two Hardened recruits at 50% the normal price later in the game.",
+    "allies": [0,3,5],
+    "enemies": [],
+    "discounts": [
+      {
+        "type": "Hardened recruit",
+        "value": 50,
+        "times": 2
+      },
+      {
+        "type": "Med-Kits, Tool Kits, Gas Masks and Binoculars",
+        "value": 25,
+        "times": -1
+      }
+    ],
+    "startingEquipment": [5, 3, 6]
+  },
+  {
+    "id": 2,
+    "name": "Bandits",
+    "description": "Vultures, jackals, scavengers, vermin, maggots... the epithets are endless. These thugs rob, harass and extort anyone and everyone they can. Some Bandits crews are street gangs seeking new turf, others are extensions of organized crime syndicates muscling in on the lucrative flow of goods in and out of the Zone. It's all about money. Bandit crews start with two free doses of Electric Juice and a Chest Rig. They always receive one free Molotov Cocktail when visiting The Stalls. Later in the game, they can hire one Veteran recruit at 25% less the normal price and can always recruit Rookies at 50% normal price.",
+    "allies": [],
+    "enemies": [0,1,5],
+    "discounts": [
+      {
+        "type": "Molotov Cocktail",
+        "value": 100,
+        "times": -2
+      },
+      {
+        "type": "Veteran recruit",
+        "value": 25,
+        "times": 1
+      },
+      {
+        "type": "Rookie recruit",
+        "value": 50,
+        "times": -1
+      }
+    ],
+    "startingEquipment": [1, 1, 10]
+  },
+  {
+    "id": 3,
+    "name": "Independents",
+    "description": "Everyone's got to make a living and this bunch plies their trade in the Zone. Whether it's scavenging for artifacts, acting as a guide to researchers and thrill-seeking tourists, or hunting mutants for bounty, Independents want to be lefty alone and get on with their lives. Independents receive a free Gas Mask, Med-Kit, and Scope to start, and get a 20% discount on Basic Equipment items at The Stalls. Independents can always add Hardened recruits at 30% less the going rate.",
+    "allies": [1,5],
+    "enemies": [],
+    "discounts": [
+      {
+        "type": "Basic Equipment",
+        "value": 20,
+        "times": -1
+      },
+      {
+        "type": "Hardened Recruit",
+        "value": 30,
+        "times": -1
+      }
+    ],
+    "startingEquipment": [2, 3, 9]
+  },
+  {
+    "id": 4,
+    "name": "Cultists",
+    "description": "'If you find a kettle of crazy, it's best not to stir it'. Well, the Zone is a whole cauldron of madness and there's no shortage of folks willing to whip it to a boil. Cultists believe the Zone is a mystical, mysterious place and have devoted their lives to see it grow and spread. Technically at odds with everyone else, Cultists nonetheless have uneasy alliances with Scientists and Traders, passing valuable information and rare artifacts for profit. Cultists receive a free set of NODs and two Med-Kits when starting. They receive a 20% discount on all Advanced Equipment items at The Stalls, and when hiring new Crew members later in the campaign, their first Veteran and Rookie recruits are free.",
+    "allies": [5],
+    "enemies": [0],
+    "discounts": [
+      {
+        "type": "Advanced Equipment",
+        "value": 20,
+        "times": -1
+      },
+      {
+        "type": "Veteran Recruit",
+        "value": 100,
+        "times": 1
+      },
+      {
+        "type": "Rookie Recruit",
+        "value": 100,
+        "times": 1
+      }
+    ],
+    "startingEquipment": [7, 3, 3]
+  },
+  {
+    "id": 5,
+    "name": "Traders",
+    "description": "Someone has to grease the wheels of commerce and these are the guys who keep it all moving. Traders pass goods and information in and out of the Zone and among the various Factions. This makes them extremely useful, as well as a frequent target of Bandits. Because of this, Traders are always looking for reliable security. Traders do not receive any additional starting Gear. However, they receive a permanent 40% discount on all items at The Stalls and can hire Veteran recruits at a 25% discount.",
+    "allies": [1,4],
+    "enemies": [2],
+    "discounts": [
+      {
+        "type": "All Items",
+        "value": 40,
+        "times": -1
+      },
+      {
+        "type": "Veteran Recruit",
+        "value": 25,
+        "times": -1
+      }
+    ],
+    "startingEquipment": []
+  }
+]

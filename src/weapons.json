@@ -1,0 +1,502 @@
+[
+  {
+    "id": 0,
+    "category": "melee",
+    "types": [
+      "Knife",
+      "Claws",
+      "Teeth"
+    ],
+    "range": {
+      "min": 0,
+      "max": 0
+    },
+    "firepower": {
+      "value": 1,
+      "per": "weapon"
+    },
+    "damage": {
+      "value": 0,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 1,
+    "category": "melee",
+    "types": [
+      "Machete",
+      "Big Claws",
+      "Big Teeth"
+    ],
+    "range": {
+      "min": 0,
+      "max": 0
+    },
+    "firepower": {
+      "value": 1,
+      "per": "weapon"
+    },
+    "damage": {
+      "value": 1,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 2,
+    "category": "melee",
+    "types": [
+      "Very Big Claws",
+      "Very Big Teeth"
+    ],
+    "range": {
+      "min": 0,
+      "max": 0
+    },
+    "firepower": {
+      "value": 1,
+      "per": "weapon"
+    },
+    "damage": {
+      "value": 2,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 3,
+    "category": "melee",
+    "types": [
+      "Pistol"
+    ],
+    "range": {
+      "min": 0,
+      "max": 12
+    },
+    "firepower": {
+      "value": 1,
+      "per": "weapon"
+    },
+    "damage": {
+      "value": 0,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 4,
+    "category": "melee",
+    "types": [
+      "Magnum Pistol"
+    ],
+    "range": {
+      "min": 0,
+      "max": 12
+    },
+    "firepower": {
+      "value": 1,
+      "per": "weapon"
+    },
+    "damage": {
+      "value": 1,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 5,
+    "category": "melee",
+    "types": [
+      "Shotgun"
+    ],
+    "range": {
+      "min": 0,
+      "max": 12
+    },
+    "firepower": {
+      "value": 3,
+      "per": ""
+    },
+    "damage": {
+      "value": 3,
+      "per": "",
+      "template": ""
+    },
+    "rules": [
+      "Damage 3 at Range Melee to 6\"",
+      "Damage 2 at Range 6\" to 12\""
+    ]
+  },
+  {
+    "id": 6,
+    "category": "melee",
+    "types": [
+      "SMG"
+    ],
+    "range": {
+      "min": 0,
+      "max": 18
+    },
+    "firepower": {
+      "value": 4,
+      "per": ""
+    },
+    "damage": {
+      "value": 0,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 7,
+    "category": "rifle",
+    "types": [
+      "Assault Rifle"
+    ],
+    "range": {
+      "min": 1,
+      "max": 36
+    },
+    "firepower": {
+      "value": 3,
+      "per": ""
+    },
+    "damage": {
+      "value": 1,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 8,
+    "category": "rifle",
+    "types": [
+      "Battle Rifle"
+    ],
+    "range": {
+      "min": 1,
+      "max": 48
+    },
+    "firepower": {
+      "value": 2,
+      "per": ""
+    },
+    "damage": {
+      "value": 2,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 9,
+    "category": "support",
+    "types": [
+      "Flame Thrower",
+      "Chemical Sprayer"
+    ],
+    "range": {},
+    "firepower": {},
+    "damage": {
+      "value": 2,
+      "per": "model",
+      "template": "Flame"
+    },
+    "rules": [
+      "Limited Ammo",
+      "Support Weapon",
+      "Burn"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "support",
+    "types": [
+      "40mm Grenade Launcher"
+    ],
+    "range": {
+      "min": 4,
+      "max": 24
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 1,
+      "per": "model",
+      "template": "Small Blast"
+    },
+    "rules": [
+      "Indirect Fire",
+      "Reload",
+      "Limited Ammo",
+      "Support Weapon"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "support",
+    "types": [
+      "Squad Light Machine Gun"
+    ],
+    "range": {
+      "min": 1,
+      "max": 48
+    },
+    "firepower": {
+      "value": 4,
+      "per": ""
+    },
+    "damage": {
+      "value": 1,
+      "per": "",
+      "template": ""
+    },
+    "rules": [
+      "Support Weapon"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "support",
+    "types": [
+      "Rocket Launcher (Anti Armor)"
+    ],
+    "range": {
+      "min": 4,
+      "max": 48
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 4,
+      "per": "",
+      "template": ""
+    },
+    "rules": [
+      "Reload",
+      "Limited Ammo",
+      "Support Weapon"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "support",
+    "types": [
+      "Rocket Launcher (Anti Infantry)"
+    ],
+    "range": {
+      "min": 4,
+      "max": 48
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 2,
+      "per": "model",
+      "template": "Small Blast"
+    },
+    "rules": [
+      "Reload",
+      "Limited Ammo",
+      "Support Weapon"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "support",
+    "types": [
+      "Sniper Rifle"
+    ],
+    "range": {
+      "min": 1,
+      "max": 60
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 4,
+      "per": "",
+      "template": ""
+    },
+    "rules": [
+      "Support Weapon"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "support",
+    "types": [
+      "Heavy Machine Gun"
+    ],
+    "range": {
+      "min": 1,
+      "max": 60
+    },
+    "firepower": {
+      "value": 4,
+      "per": ""
+    },
+    "damage": {
+      "value": 3,
+      "per": "",
+      "template": ""
+    },
+    "rules": [
+      "Crew Served"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "support",
+    "types": [
+      "Mortar"
+    ],
+    "range": {
+      "min": 6,
+      "max": 60
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 2,
+      "per": "model",
+      "template": "Large Blast"
+    },
+    "rules": [
+      "Crew Served",
+      "Indirect Fire",
+      "Reload",
+      "Limited Ammo"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "grenade",
+    "types": [
+      "Molotov Cocktail"
+    ],
+    "range": {
+      "min": 1,
+      "max": 18
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 1,
+      "per": "model",
+      "template": "Small Blast"
+    },
+    "rules": [
+      "Burn"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "grenade",
+    "types": [
+      "Flash Bang"
+    ],
+    "range": {
+      "min": 1,
+      "max": 18
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 0,
+      "per": "model",
+      "template": "Small Blast"
+    },
+    "rules": [
+      "1 Pinned/model"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "grenade",
+    "types": [
+      "Smoke Grenade"
+    ],
+    "range": {
+      "min": 1,
+      "max": 18
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 0,
+      "per": "model",
+      "template": "Large Blast"
+    },
+    "rules": [
+      "Smoke Blocks Line of Sight",
+      "-2 to Will check"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "grenade",
+    "types": [
+      "Hand Grenade"
+    ],
+    "range": {
+      "min": 1,
+      "max": 18
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 2,
+      "per": "model",
+      "template": "Small Blast"
+    },
+    "rules": []
+  },
+  {
+    "id": 21,
+    "category": "grenade",
+    "types": [
+      "Satchel Charge"
+    ],
+    "range": {
+      "min": 2,
+      "max": 12
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 3,
+      "per": "model",
+      "template": "Large Blast"
+    },
+    "rules": []
+  }
+]

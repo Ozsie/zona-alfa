@@ -1,0 +1,70 @@
+[
+  {
+    "id": 0,
+    "name": "Basic BDU/Foul Weather Gear",
+    "armor": 0,
+    "description": "No Armor Save (except the Critical Success Roll of 1). Counts as an Obscured Target from Ranged Attacks when in Cover.",
+    "rules": [
+      "Obscured Target when in Cover"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Salvaged/Improvised Body Armor",
+    "armor": 3,
+    "description": "Scrounged ballistic nylon and ceramic plates sewn into tactical vests, battle dress, and foul weather clothing provide Armor 3 and renders the wearer an Obscured Target when in Cover. Most Zone Hostile Bandits and Raiders employ Improvised Body Armor.",
+    "rules": [
+      "Obscured Target when in Cover"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Civilian/Commercial Body Armor",
+    "armor": 5,
+    "description": "Armor 5 and the unit counts as an Obscured Target from Ranged Attacks when in Cover.",
+    "rules": [
+      "Obscured Target from Ranged Attacks when in Cover"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Military Body Armor",
+    "armor": 6,
+    "description": "Armor 6 and the unit counts as an Obscured Target from Ranged Attacks when in Cover.",
+    "rules": [
+      "Obscured Target from Ranged Attacks when in Cover"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Advanced Body Armor",
+    "armor": 7,
+    "description": "Armor 7 with a -1\" penalty to Move Stat but also the unit counts as an Obscured Target from Ranged Attacks when in Cover. Grants 1 extra die to Armor Save rolls, choosing best result.",
+    "rules": [
+      "Obscured Target from Ranged Attacks when in Cover",
+      "-1 penalty to Move",
+      "+1 die to Armor save roll, choose best result"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mimetic Camo",
+    "armor": 4,
+    "description": "Armor 4 plus counts as an Obscured Target for any Melee or Ranged Combat. Cumulative with regular cover and obstruction modifiers.",
+    "rules": [
+      "Obscured Target from any Ranged or Melee Attacks, cumulative with regular obstruction and cover modifiers"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Military Exo Suit",
+    "armor": 7,
+    "description": "(Power Assisted Advanced Body Armor) Armor 7 with a +2\" bonus to Move stat. PLUS counts as Obscured Target from Ranged Attacks when in Cover. Does not need to make a Will check for Deflected Hits. Grats 1 Extra die to Armor Save rolls. Choose best result.",
+    "rules": [
+      "+2 to Move",
+      "Obscured Target from Ranged Attacks when in Cover",
+      "No Will check for Deflected Hits",
+      "+1 die to Armor save roll, choose best result"
+    ]
+  }
+]
