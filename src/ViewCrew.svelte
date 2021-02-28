@@ -155,19 +155,6 @@
 	span.listHeader {
     font-weight: bold;
 	}
-	span.clickable {
-	  font-weight: bold;
-	}
-	label {
-	  padding-top: 5px;
-	  font-weight: bold;
-	}
-	input {
-	  width: 100%;
-	}
-	select {
-	  width: 50%;
-	}
 	div {
 	  padding-top: 5px;
 	}

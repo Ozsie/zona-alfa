@@ -62,6 +62,23 @@ let addGrenade = (weaponId, member, crew) => {
   return crew
 }
 
+let removeWeapon = (weapon, member, crew) => {
+  var index = member.weapons.findIndex(w => w == weapon)
+  member.weapons.splice(index, 1)
+
+  if (weapon.category == "grenade") {
+    member.options.grenade++
+  } else if (weapon.range.min == 0) {
+    member.options.meleeWeapon++
+  } else if (weapon.range.max > 0) {
+    member.options.rangedWeapon++
+  } else {
+    console.error("Removed unidentified weapon: " + JSON.stringify(weapon))
+  }
+
+  return crew
+}
+
 let addSkill = (skillId, member, crew) => {
   var skill = JSON.parse(JSON.stringify(findSkill(skillId)))
   member.skills = [...member.skills, skill]
@@ -178,4 +195,4 @@ let createUUID = () => {
   return uuid;
 }
 
-export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addRangedWeapon, addMeleeWeapon, addGrenade, removeSkill, removeEquipment, changeFaction, hasSkill, hasEquipment }
+export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addRangedWeapon, addMeleeWeapon, addGrenade, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }

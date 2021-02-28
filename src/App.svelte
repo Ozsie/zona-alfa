@@ -1,15 +1,14 @@
 <script>
-	export let name;
 	import Weapons from './Weapons.svelte';
 	import Recruits from './Recruits.svelte';
 	import Crews from './Crews.svelte';
 </script>
 
 <main>
-	<h1>Zona Alfa</h1>
+	<h1>Zona Alfa Crew Builder</h1>
 	<Crews/>
 	<div>
-    Favicon made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>
+    Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>, <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
     from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
   </div>
 </main>
@@ -25,7 +24,7 @@
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;
-		font-size: 4em;
+		font-size: 2em;
 		font-weight: 100;
 	}
 

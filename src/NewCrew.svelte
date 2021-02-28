@@ -100,7 +100,7 @@
         {#each member.skills as skill}
           <div>
             {#if skill.name != "Leader"}
-              <span class="clickable" on:click={() => crew = crewBuilder.removeSkill(equipment, member, crew)}>[-]</span>
+              <img alt="Remove" src="./remove.png" width=12 on:click={() => crew = crewBuilder.removeSkill(equipment, member, crew)}/>
             {/if}
             <span class="listHeader">{skill.name}:</span> {skill.description}
           </div>
@@ -126,7 +126,7 @@
         {#each member.equipment as equipment}
           <div>
             {#if !equipment.armor}
-              <span class="clickable" on:click={() => crew = crewBuilder.removeEquipment(equipment, member, crew)}>[-]</span>
+              <img alt="Remove" src="./remove.png" width=12 on:click={() => crew = crewBuilder.removeEquipment(equipment, member, crew)}/>
             {/if}
             <span class="listHeader">{equipment.name}:</span> {equipment.description}
           </div>
@@ -151,7 +151,10 @@
     </tr>
     {#each member.weapons as weapon}
       <tr>
-        <td>{weapon.name}</td>
+        <td>
+          <img alt="Remove" src="./remove.png" width=12 on:click={() => crew = crewBuilder.removeWeapon(weapon, member, crew)}/>
+          <input bind:value={weapon.name}/>
+        </td>
         <td>{weapon.range.min} - {weapon.range.max}</td>
         <td>{weapon.firepower.value}{#if weapon.firepower.per}/{weapon.firepower.per}{/if}</td>
         <td>
@@ -249,15 +252,12 @@
 	span.listHeader {
     font-weight: bold;
 	}
-	span.clickable {
-	  font-weight: bold;
-	}
 	label {
 	  padding-top: 5px;
 	  font-weight: bold;
 	}
 	input {
-	  width: 100%;
+	  width: 80%;
 	}
 	select {
 	  width: 50%;

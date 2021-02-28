@@ -34,8 +34,8 @@
 <ul>
 	{#each crewList as eCrew}
 		<li>
-			<span on:click={() => editCrew(eCrew)}>[E]</span>
-			<span on:click={() => deleteCrew(eCrew)}>[D]</span>
+			<img on:click={() => editCrew(eCrew)} src="./edit.png" width=16 alt="Edit"/>
+			<img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
 			<span on:click={() => viewCrew(eCrew)}>{eCrew.name} ({eCrew.k} K)</span>
 		</li>
 	{/each}
@@ -45,3 +45,9 @@
 {:else}
 <ViewCrew crew={crew} bind:show={view}/>
 {/if}
+
+<style>
+  ul {
+	  text-align: left;
+  }
+</style>
