@@ -5,9 +5,9 @@
 </script>
 
 <main>
-	<h1>Zona Alfa Crew Builder</h1>
+	<h1 class="no-print">Zona Alfa Crew Builder</h1>
 	<Crews/>
-	<div>
+	<div class="no-print">
     Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>, <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
     from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
   </div>
@@ -16,8 +16,7 @@
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		padding: 10px;
 		margin: 0 auto;
 	}
 
@@ -33,4 +32,9 @@
 			max-width: none;
 		}
 	}
+	@media print {
+    .no-print, .no-print * {
+      display: none !important;
+    }
+  }
 </style>

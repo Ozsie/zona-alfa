@@ -58,7 +58,9 @@
     </td>
   </tr>
 </table>
+<div class="grid-container">
 {#each crew.members as member}
+  <div class="grid-item">
   <table>
     <tr>
       <th>Name</th>
@@ -126,10 +128,20 @@
       </tr>
     {/each}
   </table>
+  <div class="pagebreak"> </div>
+  </div>
 {/each}
-<button on:click={() => show = false}>Back</button>
+</div>
+<button class="no-print" on:click={() => show = false}>Back</button>
 
 <style>
+  .grid-container {
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    display: grid;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 	th {
 		background-color: lightblue;
 	  border: 1px solid black;
@@ -145,8 +157,8 @@
 	table {
 	  border-collapse: collapse;
 	  border: 1px solid black;
-	  width: 90%;
-	  font-size: 10pt;
+	  width: 100%;
+	  font-size: 8pt;
 	  margin-bottom: 10px;
 	}
 	tr.list {
@@ -158,4 +170,12 @@
 	div {
 	  padding-top: 5px;
 	}
+	@media print {
+    .pagebreak {
+      page-break-after: always;
+    }
+    .no-print, .no-print * {
+      display: none !important;
+    }
+  }
 </style>
