@@ -54,13 +54,13 @@
     {/each}
   {/if}
   {#if member.options.rangedWeapon > 0 && edit}
-    <WeaponSelector label="Add ranged weapon" weaponSet="ranged" bind:selectedWeapon={selectedRangedWeapon} click={() => crew = crewBuilder.addRangedWeapon(selectedRangedWeapon, member, crew)}/>
+    <WeaponSelector label="Add ranged weapon" weaponSet="ranged" bind:selectedWeapon={selectedRangedWeapon} click={() => crew = crewBuilder.addWeapon(selectedRangedWeapon, "rangedWeapon", member, crew)}/>
   {/if}
   {#if member.options.meleeWeapon > 0 && edit}
-    <WeaponSelector label="Add melee weapon" weaponSet="melee" bind:selectedWeapon={selectedMeleeWeapon} click={() => crew = crewBuilder.addMeleeWeapon(selectedMeleeWeapon, member, crew)}/>
+    <WeaponSelector label="Add melee weapon" weaponSet="melee" bind:selectedWeapon={selectedMeleeWeapon} click={() => crew = crewBuilder.addWeapon(selectedMeleeWeapon, "meleeWeapon", member, crew)}/>
   {/if}
   {#if member.options.grenade > 0 && edit}
-    <WeaponSelector label="Add grenade" weaponSet="grenades" bind:selectedWeapon={selectedGrenade} click={() => crew = crewBuilder.addGrenade(selectedGrenade, member, crew)}/>
+    <WeaponSelector label="Add grenade" weaponSet="grenades" bind:selectedWeapon={selectedGrenade} click={() => crew = crewBuilder.addWeapon(selectedGrenade, "grenade", member, crew)}/>
   {/if}
 </table>
 <style>

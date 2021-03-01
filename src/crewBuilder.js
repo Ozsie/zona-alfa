@@ -39,6 +39,15 @@ let addRecruit = (recruitId, crew) => {
   return updateK(crew)
 }
 
+let addWeapon = (weaponId, weaponOption, member, crew) => {
+  var weapon = JSON.parse(JSON.stringify(findWeapon(weaponId)))
+  weapon.name = weapon.types.join(" / ")
+  weapon.option = weaponOption
+  member.weapons = [...member.weapons, weapon]
+  member.options[weaponOption]--
+  return crew
+}
+
 let addRangedWeapon = (weaponId, member, crew) => {
   var weapon = JSON.parse(JSON.stringify(findWeapon(weaponId)))
   weapon.name = weapon.types.join(" / ")
@@ -66,17 +75,7 @@ let addGrenade = (weaponId, member, crew) => {
 let removeWeapon = (weapon, member, crew) => {
   var index = member.weapons.findIndex(w => w == weapon)
   member.weapons.splice(index, 1)
-
-  if (weapon.category == "grenade") {
-    member.options.grenade++
-  } else if (weapon.range.min == 0) {
-    member.options.meleeWeapon++
-  } else if (weapon.range.max > 0) {
-    member.options.rangedWeapon++
-  } else {
-    console.error("Removed unidentified weapon: " + JSON.stringify(weapon))
-  }
-
+  member.options[weapon.option]++
   return crew
 }
 
@@ -197,4 +196,4 @@ let createUUID = () => {
   return uuid;
 }
 
-export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addRangedWeapon, addMeleeWeapon, addGrenade, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }
+export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addWeapon, addRangedWeapon, addMeleeWeapon, addGrenade, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }

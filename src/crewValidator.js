@@ -20,7 +20,7 @@ let validateModel = (crew) => {
 
 let validateMember = (member) => {
   member.skills.forEach(validateSkill)
-  member.weapons.forEach(validateWeapon)
+  member.weapons.forEach(w => validateWeapon(w, member))
   if (!member.notes) {
     member.notes = ""
   }
@@ -33,12 +33,30 @@ let validateSkill = (skill) => {
   }
 }
 
-let validateWeapon = (weapon) => {
+let validateWeapon = (weapon, member) => {
   if (weapon.damage.template == "Small Blast") {
     weapon.damage.template = "SBT"
   }
   if (weapon.damage.template == "Large Blast") {
     weapon.damage.template = "LBT"
+  }
+  if (!weapon.option) {
+    if (weapon.category == "grenade") {
+      weapon.option = "grenade"
+    } else if (weapon.category != "melee") {
+      weapon.option = "rangedWeapon"
+    } else {
+      var otherWeapons = member.weapons
+        .filter(w => w != weapon)
+        .filter(w => w.category != "grenade")
+        .filter(w => w.category == "melee")
+        .filter(w => w.option)
+      if (otherWeapons.length > 0) {
+        weapon.option = "meleeWeapon"
+      } else {
+        weapon.option = "rangedWeapon"
+      }
+    }
   }
 }
 
