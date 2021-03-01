@@ -37,7 +37,7 @@
           {/if}
         </div>
       {/each}
-      {#if member.options.skill > 0}
+      {#if member.options.skill > 0 && edit}
         <label for="skills">Add skill</label>
         <select bind:value={selectedSkill} name="skills">
           {#each skills as newSkill}

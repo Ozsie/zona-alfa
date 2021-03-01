@@ -28,7 +28,7 @@
         </div>
       {/each}
 
-      {#if member.options.basicEquipment > 0}
+      {#if member.options.basicEquipment > 0 && edit}
         <label for="basicEquipment">Add basic equipment</label>
         <select bind:value={selectedEquipment} name="basicEquipment">
           {#each basicEquipment as newEquipment}
