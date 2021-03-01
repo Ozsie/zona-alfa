@@ -79,7 +79,7 @@ table {
   border-collapse: collapse;
   border: 1px solid black;
   width: 100%;
-  font-size: 10pt;
+  font-size: 8pt;
 }
 label {
   padding-top: 5px;
@@ -110,10 +110,23 @@ td.notes {
   height: 100px;
 }
 td.fixed {
-  height: 120px;
+  height: 138px;
 }
 td.fixedTall {
   height: 150px;
+}
+.grid-container {
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  display: grid;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+}
+@media(min-width:1024px){
+  .grid-container {
+     grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media print {
   .pagebreak {
@@ -125,5 +138,8 @@ td.fixedTall {
   div.footer {
     position: fixed;
     bottom: 0;
+  }
+  .grid-container {
+     grid-template-columns: repeat(2, 1fr);
   }
 }
