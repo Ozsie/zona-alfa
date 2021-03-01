@@ -109,4 +109,8 @@ select {
   .no-print, .no-print * {
     display: none !important;
   }
+  div.footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
