@@ -43,6 +43,16 @@
       </td>
     </tr>
   {/each}
+  {#if member.weapons.length < 4}
+    {#each Array(4 - member.weapons.length) as _, row}
+      <tr class="fixed">
+        <td class="list vcenter"></td>
+        <td class="list vcenter"></td>
+        <td class="list vcenter"></td>
+        <td class="list vcenter"></td>
+      </tr>
+    {/each}
+  {/if}
   {#if member.options.rangedWeapon > 0 && edit}
     <tr class="list">
       <td class="wide" colspan="4">
