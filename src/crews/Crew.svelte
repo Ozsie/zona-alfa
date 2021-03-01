@@ -103,19 +103,3 @@
   <button on:click={() => edit = !edit}>{#if edit}Lock{:else}Edit{/if}</button>
   <button on:click={() => show = false}>Back</button>
 </div>
-
-<style>
-  .grid-container {
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-    display: grid;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2px;
-  }
-  @media(min-width:1024px){
-    .grid-container {
-       grid-template-columns: repeat(3, 1fr);
-    }
-  }
-</style>
