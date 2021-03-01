@@ -18,7 +18,7 @@
     <th class="wide" colspan="4">Equipment</th>
   </tr>
   <tr class="list wide">
-    <td class="wide equipment" colspan="4">
+    <td class="wide equipment fixedTall" colspan="4">
       {#each member.equipment as equipment}
         <div>
           {#if !equipment.armor}

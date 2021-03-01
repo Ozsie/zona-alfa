@@ -78,7 +78,7 @@
           <th>Notes</th>
         </tr>
         <tr class="list wide">
-          <td class="wide">
+          <td class="wide fixed">
             <TextField type="textarea" bind:value={member.notes} edit={edit}/>
           </td>
         </tr>
@@ -115,7 +115,7 @@
   }
   @media(min-width:1024px){
     .grid-container {
-       grid-template-columns: repeat(4, 1fr);
+       grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

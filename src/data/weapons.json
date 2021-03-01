@@ -233,7 +233,7 @@
     "damage": {
       "value": 1,
       "per": "model",
-      "template": "Small Blast"
+      "template": "SBT"
     },
     "rules": [
       "Indirect Fire",
@@ -307,7 +307,7 @@
     "damage": {
       "value": 2,
       "per": "model",
-      "template": "Small Blast"
+      "template": "SBT"
     },
     "rules": [
       "Reload",
@@ -378,7 +378,7 @@
     "damage": {
       "value": 2,
       "per": "model",
-      "template": "Large Blast"
+      "template": "LBT"
     },
     "rules": [
       "Crew Served",
@@ -404,7 +404,7 @@
     "damage": {
       "value": 1,
       "per": "model",
-      "template": "Small Blast"
+      "template": "SBT"
     },
     "rules": [
       "Burn"
@@ -427,7 +427,7 @@
     "damage": {
       "value": 0,
       "per": "model",
-      "template": "Small Blast"
+      "template": "SBT"
     },
     "rules": [
       "1 Pinned/model"
@@ -450,7 +450,7 @@
     "damage": {
       "value": 0,
       "per": "model",
-      "template": "Large Blast"
+      "template": "LBT"
     },
     "rules": [
       "Smoke Blocks Line of Sight",
@@ -474,7 +474,7 @@
     "damage": {
       "value": 2,
       "per": "model",
-      "template": "Small Blast"
+      "template": "SBT"
     },
     "rules": []
   },
@@ -495,7 +495,7 @@
     "damage": {
       "value": 3,
       "per": "model",
-      "template": "Large Blast"
+      "template": "LBT"
     },
     "rules": []
   }

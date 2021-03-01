@@ -15,11 +15,15 @@
     <td><TextField bind:value={crew.name} edit={edit}/></td>
     <th>Faction</th>
     <td>
+      {#if edit}
       <select bind:value={crew.faction.id} on:change={() => crew = crewBuilder.changeFaction(crew.faction.id, crew)}>
         {#each factions as faction}
           <option value={faction.id}>{faction.name}</option>
         {/each}
       </select>
+      {:else}
+        {crew.faction.name}
+      {/if}
     </td>
   </tr>
   <tr>
@@ -42,7 +46,7 @@
     <th class="wide" colspan="4">Notes</th>
   </tr>
   <tr class="list">
-    <td class="wide" colspan="4">
+    <td class="wide notes" colspan="4">
       {#each crew.faction.discounts as {type, value, times}, i}
         <span>
           {value}% discount on {type} {#if times == -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.

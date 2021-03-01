@@ -20,6 +20,7 @@ let validateModel = (crew) => {
 
 let validateMember = (member) => {
   member.skills.forEach(validateSkill)
+  member.weapons.forEach(validateWeapon)
   if (!member.notes) {
     member.notes = ""
   }
@@ -29,6 +30,15 @@ let validateSkill = (skill) => {
   if (!skill.effects) {
     var effects = JSON.parse(JSON.stringify(skills.find(s => s.id == skill.id).effects))
     skill.effects = effects
+  }
+}
+
+let validateWeapon = (weapon) => {
+  if (weapon.damage.template == "Small Blast") {
+    weapon.damage.template = "SBT"
+  }
+  if (weapon.damage.template == "Large Blast") {
+    weapon.damage.template = "LBT"
   }
 }
 

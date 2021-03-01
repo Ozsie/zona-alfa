@@ -18,7 +18,7 @@
     <th>Skills</th>
   </tr>
   <tr class="list wide">
-    <td class="wide">
+    <td class="wide fixed">
       {#each member.skills as skill}
         <div>
           {#if skill.name != "Leader"}

@@ -69,11 +69,13 @@ th {
   color: white;
 }
 td {
+  vertical-align: top;
   border: 1px solid black;
   width: 25%;
   background-color: #dfe0f2;
 }
 table {
+  vertical-align: top;
   border-collapse: collapse;
   border: 1px solid black;
   width: 100%;
@@ -89,6 +91,9 @@ select {
 div {
   padding-top: 5px;
 }
+td.list {
+  text-align: left;
+}
 tr.list {
   text-align: left;
 }
@@ -101,7 +106,15 @@ select {
 .wide {
   width: 100%;
 }
-
+td.notes {
+  height: 100px;
+}
+td.fixed {
+  height: 120px;
+}
+td.fixedTall {
+  height: 150px;
+}
 @media print {
   .pagebreak {
     page-break-after: always;

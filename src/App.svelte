@@ -16,7 +16,10 @@
       <a href="https://ospreypublishing.com/gaming-resources-owg#zonaalfa" title="Gaming Resources">Gaming Resources</a>
     </div>
     <div class="no-print">
-      Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>, <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
+      Icons made by
+      <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>,
+      <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>,
+      <a href="https://www.freepik.com" title="Freepik">Freepik</a>
       from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
     </div>
   </div>
