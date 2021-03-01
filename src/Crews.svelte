@@ -1,6 +1,5 @@
 <script>
-	import NewCrew from './NewCrew.svelte';
-	import ViewCrew from './ViewCrew.svelte';
+	import Crew from './crews/Crew.svelte';
 	import {store} from './store.js';
 	import {crewBuilder} from './crewBuilder.js';
 
@@ -41,9 +40,9 @@
 	{/each}
 </ul>
 {:else if newCrew && !view}
-<NewCrew crew={crew} bind:show={newCrew}/>
+<Crew crew={crew} bind:show={newCrew} edit={true}/>
 {:else}
-<ViewCrew crew={crew} bind:show={view}/>
+<Crew crew={crew} bind:show={view} edit={false}/>
 {/if}
 
 <style>

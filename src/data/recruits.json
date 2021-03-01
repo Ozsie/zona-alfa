@@ -58,7 +58,7 @@
     "name": "Leader",
     "wounds": 2,
     "movement": 6,
-    "combatAbility": 7,
+    "combatAbility": 6,
     "will": 7,
     "armor": 3,
     "options": {

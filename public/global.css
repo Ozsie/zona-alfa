@@ -61,3 +61,52 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+th {
+  background-color: #000b8f;
+  border: 1px solid black;
+  width: 25%;
+  color: white;
+}
+td {
+  border: 1px solid black;
+  width: 25%;
+  background-color: #dfe0f2;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+  font-size: 10pt;
+}
+label {
+  padding-top: 5px;
+  font-weight: bold;
+}
+select {
+  width: 50%;
+}
+div {
+  padding-top: 5px;
+}
+tr.list {
+  text-align: left;
+}
+span.listHeader {
+  font-weight: bold;
+}
+select {
+  width: 50%;
+}
+.wide {
+  width: 100%;
+}
+
+@media print {
+  .pagebreak {
+    page-break-after: always;
+  }
+  .no-print, .no-print * {
+    display: none !important;
+  }
+}

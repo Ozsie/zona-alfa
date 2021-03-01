@@ -1,6 +1,4 @@
 <script>
-	import Weapons from './Weapons.svelte';
-	import Recruits from './Recruits.svelte';
 	import Crews from './Crews.svelte';
 </script>
 

@@ -1,9 +1,9 @@
-import factions from './factions.json'
-import recruits from './recruits.json'
-import skills from './skills.json'
-import armors from './armors.json'
-import weapons from './weapons.json'
-import equipment from './equipment.json'
+import factions from './data/factions.json'
+import recruits from './data/recruits.json'
+import skills from './data/skills.json'
+import armors from './data/armors.json'
+import weapons from './data/weapons.json'
+import equipment from './data/equipment.json'
 
 let create = (name, factionId) => {
   var faction = createFaction(factionId)
@@ -138,7 +138,7 @@ let createFaction = (factionId) => {
 
 let createLeader = (factionName) => {
   var leader = JSON.parse(JSON.stringify(createMember(3, factionName)))
-  var leaderSkill = findSkill(5)
+  var leaderSkill = JSON.parse(JSON.stringify(findSkill(5)))
   leader.skills.push(leaderSkill)
 
   return leader

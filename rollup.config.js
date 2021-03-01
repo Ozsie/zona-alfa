@@ -37,6 +37,10 @@ export default {
 		name: 'app',
 		file: 'public/build/bundle.js'
 	},
+	onwarn (warning, warn) {
+	  if (warning.message.startsWith("A11y: on:blur")) return;
+	  warn(warning)
+	},
 	plugins: [
         json({
             compact: true
