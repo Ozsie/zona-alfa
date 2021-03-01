@@ -7,6 +7,7 @@
   import equipment from '../data/equipment.json'
 
   export let edit
+  export let compact = true
   export let crew
   export let member
 
@@ -24,7 +25,17 @@
           {#if !equipment.armor}
             <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeEquipment(equipment, member, crew)}/>
           {/if}
-          <span class="listHeader">{equipment.name}:</span> {equipment.description}
+          {#if compact && equipment.rules}
+            <span class="listHeader">{equipment.name}:</span> {#if equipment.armor}Armor {equipment.armor}<br>{/if}
+            {#each equipment.rules as rule, i}
+              <span>{rule} </span>
+              {#if i < equipment.rules.length - 1}
+                <br>
+              {/if}
+            {/each}
+          {:else}
+            <span class="listHeader">{equipment.name}:</span> {equipment.description}
+          {/if}
         </div>
       {/each}
 

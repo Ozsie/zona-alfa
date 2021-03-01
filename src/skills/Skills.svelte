@@ -25,10 +25,10 @@
             <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeSkill(skill, member, crew)}/>
           {/if}
           <span class="listHeader">{skill.name}:</span>
-          {#if compact }
+          {#if compact}
             {#each skill.effects as effect, i}
               <span>{effect} </span>
-              {#if i != skill.effects.length - 1}
+              {#if i < skill.effects.length - 1}
                 <br>
               {/if}
             {/each}

@@ -71,7 +71,7 @@
         </tr>
       </table>
       <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
-      <Equipment bind:crew={crew} bind:member={member} bind:edit={edit}/>
+      <Equipment bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
       <WeaponRows bind:crew={crew} bind:member={member} bind:edit={edit}/>
       <table>
         <tr class="wide">
