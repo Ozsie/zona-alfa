@@ -13,7 +13,8 @@ let create = (name, factionId) => {
     "name": name,
     "faction": faction,
     "k": 3,
-    "members": [leader]
+    "members": [leader],
+    "notes": ""
   }
   return crew
 }
@@ -153,6 +154,7 @@ let createMember = (recruitId, factionName) => {
   member.faction = factionName
   member.weapons = []
   member.skills = []
+  member.notes = ""
 
   return member
 }

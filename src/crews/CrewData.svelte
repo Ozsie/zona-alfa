@@ -34,18 +34,22 @@
         </div>
       {/each}
     </td>
-    <td colspan="2"></td>
+    <td colspan="2">
+      <TextField type="textarea" bind:value={crew.artifacts} edit={edit}/>
+    </td>
   </tr>
   <tr>
     <th class="wide" colspan="4">Notes</th>
   </tr>
   <tr class="list">
     <td class="wide" colspan="4">
-      {#each crew.faction.discounts as {type, value, times}}
-        <div>
+      {#each crew.faction.discounts as {type, value, times}, i}
+        <span>
           {value}% discount on {type} {#if times == -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.
-        </div>
+        </span>
+        <br>
       {/each}
+      <TextField type="textarea" bind:value={crew.notes} edit={edit}/>
     </td>
   </tr>
 </table>

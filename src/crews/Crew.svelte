@@ -73,6 +73,16 @@
       <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
       <Equipment bind:crew={crew} bind:member={member} bind:edit={edit}/>
       <WeaponRows bind:crew={crew} bind:member={member} bind:edit={edit}/>
+      <table>
+        <tr class="wide">
+          <th>Notes</th>
+        </tr>
+        <tr class="list wide">
+          <td class="wide">
+            <TextField type="textarea" bind:value={member.notes} edit={edit}/>
+          </td>
+        </tr>
+      </table>
       <div class="pagebreak"> </div>
     </div>
   {/each}
@@ -102,5 +112,10 @@
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2px;
+  }
+  @media(min-width:1024px){
+    .grid-container {
+       grid-template-columns: repeat(4, 1fr);
+    }
   }
 </style>
