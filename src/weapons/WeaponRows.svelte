@@ -33,7 +33,7 @@
         <img src="{weapon.category}.png" alt={weapon.category} width="12px">
         <TextField bind:value={weapon.name} edit={edit}/>
       </td>
-      <td class="vcenter">{#if weapon.range.min == 0}melee{:else}{weapon.range.min}{/if} - {weapon.range.max}</td>
+      <td class="vcenter">{#if weapon.range.min == 0}melee{:else}{weapon.range.min}{/if}{#if weapon.range.max > 0} - {weapon.range.max}{/if}</td>
       <td class="vcenter">{weapon.firepower.value}{#if weapon.firepower.per}/{weapon.firepower.per}{/if}</td>
       <td class="vcenter">
         {#if weapon.damage.template}{weapon.damage.template}, {/if}{weapon.damage.value}{#if weapon.damage.per}/{weapon.damage.per}{/if}{#if weapon.rules.length > 0}, {/if}
