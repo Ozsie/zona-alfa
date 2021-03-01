@@ -48,30 +48,6 @@ let addWeapon = (weaponId, weaponOption, member, crew) => {
   return crew
 }
 
-let addRangedWeapon = (weaponId, member, crew) => {
-  var weapon = JSON.parse(JSON.stringify(findWeapon(weaponId)))
-  weapon.name = weapon.types.join(" / ")
-  member.weapons = [...member.weapons, weapon]
-  member.options.rangedWeapon--
-  return crew
-}
-
-let addMeleeWeapon = (weaponId, member, crew) => {
-  var weapon = JSON.parse(JSON.stringify(findWeapon(weaponId)))
-  weapon.name = weapon.types.join(" / ")
-  member.weapons = [...member.weapons, weapon]
-  member.options.meleeWeapon--
-  return crew
-}
-
-let addGrenade = (weaponId, member, crew) => {
-  var weapon = JSON.parse(JSON.stringify(findWeapon(weaponId)))
-  weapon.name = weapon.types.join(" / ")
-  member.weapons = [...member.weapons, weapon]
-  member.options.grenade--
-  return crew
-}
-
 let removeWeapon = (weapon, member, crew) => {
   var index = member.weapons.findIndex(w => w == weapon)
   member.weapons.splice(index, 1)
@@ -196,4 +172,4 @@ let createUUID = () => {
   return uuid;
 }
 
-export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addWeapon, addRangedWeapon, addMeleeWeapon, addGrenade, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }
+export var crewBuilder = { create, addRecruit, updateK, addSkill, addBasicEquipment, addWeapon, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }
