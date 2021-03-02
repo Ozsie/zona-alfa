@@ -1,5 +1,6 @@
 <script>
   import TextField from '../TextField.svelte'
+  import RemoveButton from '../RemoveButton.svelte'
   import CrewData from './CrewData.svelte'
   import Skills from '../skills/Skills.svelte'
   import Equipment from '../equipment/Equipment.svelte'
@@ -45,6 +46,11 @@
   {#each crew.members as member}
     <div class="grid-item">
       <table>
+        <tr class="no-print {edit ? "" : "hide"}">
+          <td colspan="4">
+            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
+          </td>
+        </tr>
         <tr>
           <th>Name</th>
           <td><TextField bind:value={member.name} edit={edit}/></td>
@@ -103,3 +109,8 @@
   <button on:click={() => edit = !edit}>{#if edit}Lock{:else}Edit{/if}</button>
   <button on:click={() => show = false}>Back</button>
 </div>
+<style>
+  .hide {
+    display: none;
+  }
+</style>
