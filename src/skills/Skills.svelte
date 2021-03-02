@@ -1,8 +1,7 @@
 <script>
-  import TextField from '../TextField.svelte'
   import RemoveButton from '../RemoveButton.svelte'
 
-	import {crewBuilder} from '../crewBuilder.js';
+  import {crewBuilder} from '../crewBuilder.js';
 
   import skills from '../data/skills.json'
 
@@ -21,7 +20,7 @@
     <td class="wide fixed">
       {#each member.skills as skill}
         <div>
-          {#if skill.name != "Leader"}
+          {#if skill.name !== "Leader"}
             <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeSkill(skill, member, crew)}/>
           {/if}
           <span class="listHeader">{skill.name}:</span>
@@ -39,7 +38,7 @@
       {/each}
       {#if member.options.skill > 0 && edit}
         <label for="skills">Add skill</label>
-        <select bind:value={selectedSkill} name="skills">
+        <select bind:value={selectedSkill} id="skills">
           {#each skills as newSkill}
             {#if !crewBuilder.hasSkill(newSkill.id, member)}
               <option value="{newSkill.id}">{newSkill.name}</option>

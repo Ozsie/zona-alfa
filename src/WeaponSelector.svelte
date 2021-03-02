@@ -6,9 +6,9 @@
 	export let selectedWeapon;
 	export let click = () => {}
 
-  let rangedWeapons = weapons.filter(w => w.category != "grenade").filter(w => w.range.max != 0);
-  let meleeWeapons = weapons.filter(w => w.category != "grenade").filter(w => w.range.min == 0);
-  let grenades = weapons.filter(w => w.category == "grenade");
+  let rangedWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.max !== 0);
+  let meleeWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.min === 0);
+  let grenades = weapons.filter(w => w.category === "grenade");
 
   let selectedSet = weapons
 
@@ -27,7 +27,7 @@
 <tr class="list">
   <td class="wide" colspan="4">
     <label for="weapon">{label}</label>
-    <select bind:value={selectedWeapon} name="weapon">
+    <select bind:value={selectedWeapon} id="weapon">
       {#each selectedSet as weapon}
         <option value="{weapon.id}">
           {weapon.types.join(" / ")}

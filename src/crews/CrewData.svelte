@@ -1,8 +1,7 @@
 <script>
   import TextField from '../TextField.svelte'
-  import RemoveButton from '../RemoveButton.svelte'
 
-	import {crewBuilder} from '../crewBuilder.js';
+  import {crewBuilder} from '../crewBuilder.js';
 
   import factions from '../data/factions.json'
 
@@ -49,7 +48,7 @@
     <td class="wide notes" colspan="4">
       {#each crew.faction.discounts as {type, value, times}, i}
         <span>
-          {value}% discount on {type} {#if times == -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.
+          {value}% discount on {type} {#if times === -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.
         </span>
         <br>
       {/each}

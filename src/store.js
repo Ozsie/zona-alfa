@@ -1,6 +1,4 @@
-import { writable } from "svelte/store";
-
-var storedCrews = localStorage.getItem("crews")
+let storedCrews = localStorage.getItem("crews");
 if (!storedCrews) {
   console.log("Init crews")
   localStorage.setItem("crews", JSON.stringify([]))

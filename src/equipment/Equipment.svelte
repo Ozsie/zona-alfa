@@ -1,8 +1,7 @@
 <script>
-  import TextField from '../TextField.svelte'
   import RemoveButton from '../RemoveButton.svelte'
 
-	import {crewBuilder} from '../crewBuilder.js';
+  import {crewBuilder} from '../crewBuilder.js';
 
   import equipment from '../data/equipment.json'
 
@@ -11,7 +10,7 @@
   export let crew
   export let member
 
-	let basicEquipment = equipment.filter(e => e.category == "basic");
+	let basicEquipment = equipment.filter(e => e.category === "basic");
 	let selectedEquipment;
 </script>
 <table>
@@ -41,7 +40,7 @@
 
       {#if member.options.basicEquipment > 0 && edit}
         <label for="basicEquipment">Add basic equipment</label>
-        <select bind:value={selectedEquipment} name="basicEquipment">
+        <select bind:value={selectedEquipment} id="basicEquipment">
           {#each basicEquipment as newEquipment}
             <option value="{newEquipment.id}">{newEquipment.name}</option>
           {/each}

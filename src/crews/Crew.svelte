@@ -12,22 +12,21 @@
 	import {crewValidator} from '../crewValidator.js';
 
   import recruits from '../data/recruits.json'
-  import factions from '../data/factions.json'
 
-	export let crew
+	export let crew = {}
 	export let show
 	export let edit = false
 	let compact = true
 
 	crew = crewValidator.validateModel(crew)
 
-	let nonLeaders = recruits.filter(r => r.name != "Leader");
+	let nonLeaders = recruits.filter(r => r.name !== "Leader");
 
 	let selectedRecruit;
 
 	function saveCrew() {
-	  var index = store.crews.findIndex(c => c.id == crew.id)
-	  if (index != -1) {
+	  var index = store.crews.findIndex(c => c.id === crew.id)
+	  if (index !== -1) {
 	    store.crews.splice(index, 1, crew)
 	  } else {
 	    store.crews.push(crew)
@@ -47,7 +46,7 @@
   {#each crew.members as member}
     <div class="grid-item">
       <table>
-        <tr class="no-print {edit ? "" : "hide"}">
+        <tr class="no-print {edit ? '' : 'hide'}">
           <td colspan="3">
             <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
           </td>
@@ -108,7 +107,7 @@
 {#if edit}
 <div>
   <label for="recruit">Add recruit</label>
-  <select bind:value={selectedRecruit} name="recruit">
+  <select bind:value={selectedRecruit} id="recruit">
     {#each nonLeaders as newRecruit}
       <option value="{newRecruit.id}">{newRecruit.name}</option>
     {/each}
@@ -122,9 +121,6 @@
   <button on:click={() => show = false}>Back</button>
 </div>
 <style>
-  .hide {
-    display: none;
-  }
   th.r {
     text-align: right;
     width: 20%;

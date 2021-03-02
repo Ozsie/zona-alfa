@@ -6,11 +6,11 @@
   export let rows = 5
 </script>
 {#if edit}
-  {#if type == "text"}
+  {#if type === "text"}
     <input bind:value={value} on:change={change}>
-  {:else if type == "number" }
+  {:else if type === "number" }
     <input type="number" bind:value={value} on:change={change}>
-  {:else if type == "textarea" }
+  {:else if type === "textarea" }
     <textarea bind:value={value} on:change={change} rows={rows}></textarea>
   {/if}
 {:else}
