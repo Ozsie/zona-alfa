@@ -5,8 +5,9 @@
 
   import equipment from '../data/equipment.json'
 
-  export let edit
+  export let edit = false
   export let compact = true
+  export let print = false
   export let crew
   export let member
 
@@ -18,7 +19,7 @@
     <th class="wide" colspan="4">Equipment</th>
   </tr>
   <tr class="list wide">
-    <td class="wide equipment fixedTall" colspan="4">
+    <td class="wide equipment {print ? 'print' : 'fixedTall'}" colspan="4">
       {#each member.equipment as equipment}
         <div>
           {#if !equipment.armor}
@@ -27,8 +28,16 @@
           {#if compact && equipment.rules}
             <span class="listHeader">{equipment.name}:</span> {#if equipment.armor}Armor {equipment.armor}<br>{/if}
             {#each equipment.rules as rule, i}
-              <span>{rule} </span>
+              <span>{rule}</span>
               {#if i < equipment.rules.length - 1}
+                <br>
+              {/if}
+            {/each}
+          {:else if compact}
+            <span class="listHeader">{equipment.name}:</span>
+            {#each equipment.effects as effect, i}
+              <span>{effect}</span>
+              {#if i < equipment.effects.length - 1}
                 <br>
               {/if}
             {/each}
@@ -50,3 +59,8 @@
     </td>
   </tr>
 </table>
+<style>
+  .print {
+    height: 110px;
+  }
+</style>

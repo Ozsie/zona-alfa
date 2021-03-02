@@ -1,4 +1,5 @@
 import skills from './data/skills.json'
+import equipment from './data/equipment.json'
 
 let validateModel = (crew) => {
   crew.members.forEach(validateMember)
@@ -16,8 +17,15 @@ let validateModel = (crew) => {
 let validateMember = (member) => {
   member.skills.forEach(validateSkill)
   member.weapons.forEach(w => validateWeapon(w, member))
+  member.equipment.forEach(e => validateEquipment(e))
   if (!member.notes) {
     member.notes = ""
+  }
+}
+
+let validateEquipment = (quip) => {
+  if (!quip.effects) {
+    quip.effects = JSON.parse(JSON.stringify(equipment.find(e => e.id === quip.id).effects))
   }
 }
 

@@ -7,9 +7,10 @@
 
   import weapons from '../data/weapons.json'
 
-  export let edit
+  export let edit = false
   export let crew
   export let member
+  export let print = false
 
   let rangedWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.max !== 0);
   let meleeWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.min === 0);
@@ -21,21 +22,21 @@
 </script>
 <table>
   <tr>
-    <th>Weapon Type</th>
+    <th class="name">Weapon Type</th>
     <th>Range</th>
     <th>Firepower</th>
-    <th>Damage</th>
+    <th class="damage">Damage</th>
   </tr>
   {#each member.weapons as weapon}
-    <tr class="fixed">
-      <td class="list vcenter">
+    <tr class="{print ? 'print' : 'fixed'}">
+      <td class="list vcenter name">
         <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeWeapon(weapon, member, crew)}/>
         <img src="{weapon.category}.png" alt={weapon.category} width="12px">
         <TextField bind:value={weapon.name} edit={edit}/>
       </td>
-      <td class="vcenter">{#if weapon.range.min === 0}melee{:else}{weapon.range.min}{/if}{#if weapon.range.max > 0}-{weapon.range.max}{/if}</td>
+      <td class="vcenter">{#if weapon.range.min === 0 && !print}melee{:else}{weapon.range.min}{/if}{#if weapon.range.max > 0}-{weapon.range.max}{/if}</td>
       <td class="vcenter">{weapon.firepower.value}{#if weapon.firepower.per}/{weapon.firepower.per}{/if}</td>
-      <td class="vcenter">
+      <td class="vcenter damage">
         {#if weapon.damage.template}{weapon.damage.template}, {/if}{weapon.damage.value}{#if weapon.damage.per}/{weapon.damage.per}{/if}{#if weapon.rules.length > 0}, {/if}
         {#each weapon.rules as rule, i}
           {rule}{#if i < weapon.rules.length - 1}, {/if}
@@ -45,11 +46,11 @@
   {/each}
   {#if member.weapons.length < 4}
     {#each Array(4 - member.weapons.length) as _, row}
-      <tr class="fixed">
+      <tr class="{print ? 'print' : 'fixed'}">
+        <td class="list vcenter name"></td>
         <td class="list vcenter"></td>
         <td class="list vcenter"></td>
-        <td class="list vcenter"></td>
-        <td class="list vcenter"></td>
+        <td class="list vcenter damage"></td>
       </tr>
     {/each}
   {/if}
@@ -64,10 +65,23 @@
   {/if}
 </table>
 <style>
-  tr.fixed {
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  .name {
+    width: 40%;
+  }
+  .damage {
+      width: 40%;
+  }
+  .fixed {
     height: 36px;
   }
-  td.vcenter {
+  .vcenter {
     vertical-align: middle;
+  }
+  .print {
+    height: 18px;
   }
 </style>

@@ -4,6 +4,9 @@
     "category": "basic",
     "name": "Binoculars",
     "description": "+12\" to Inspect range when surveying Hot Spots or Mission Objectives.",
+    "effects": [
+      "+12\" to Inspect range,"
+    ],
     "value": 200
   },
   {
@@ -11,6 +14,9 @@
     "category": "basic",
     "name": "Electric Juice",
     "description": "Immediately grants 2 additional actions. Only 1 action allowed the following turn.",
+    "effects": [
+      "+2 Actions now, only 1 Action next turn"
+    ],
     "value": 100
   },
   {
@@ -18,6 +24,9 @@
     "category": "basic",
     "name": "Gas Mask",
     "description": "No Will check required for Smoke or Fumes.",
+    "effects": [
+      "No Will check for Smoke/Fumes"
+    ],
     "value": 200
   },
   {
@@ -25,6 +34,10 @@
     "category": "basic",
     "name": "Med-Kit",
     "description": "Replace 1 Wound with 2 Pinned. If used by Bone Doc, replace 1 Wound with 1 Pinned.",
+    "effects": [
+      "1 Wound into 2 Pinned (BoneDoc: 1 Pinned).",
+      "Free Action on self."
+    ],
     "value": 250
   },
   {
@@ -32,6 +45,9 @@
     "category": "basic",
     "name": "Red Dot Sight",
     "description": "For Pistols, SMGs, Shotguns and Assault Rifles. +1 to Ranged Attack Combat Ability Roll at half the weapon's effective range or less.",
+    "effects": [
+      "Pistol/SMG/Shotgun/AR: +1 to Ranged CA roll at 50% Weapon range or less."
+    ],
     "value": 400
   },
   {
@@ -39,6 +55,9 @@
     "category": "advanced",
     "name": "Detector",
     "description": "+2 to Will Check when Searching an Anomaly.",
+    "effects": [
+      "+2 to Will Check when Searching an Anomaly."
+    ],
     "value": 500
   },
   {
@@ -46,6 +65,10 @@
     "category": "advanced",
     "name": "Tool Kit",
     "description": "+2 to all Mechanical Skill Checks and -1 to Action cost.",
+    "effects": [
+      "+2 to all Mechanical Skill Checks.",
+      "-1 to Action cost."
+    ],
     "value": 600
   },
   {
@@ -53,6 +76,9 @@
     "category": "advanced",
     "name": "NODs",
     "description": "Negates Dark and Low Light LOS and Ranged Attack Penalties.",
+    "effects": [
+      "No Dark/Low Light LoS and Ranged Attack penalties."
+    ],
     "value": 750
   },
   {
@@ -60,6 +86,9 @@
     "category": "advanced",
     "name": "Hot Load Ammo",
     "description": "Ranged Weapon only. +1 to Weapon Damage. Enough for 1 mission.",
+    "effects": [
+      "Ranged Weapons: +1 Damage. Lasts 1 mission."
+    ],
     "value": 350
   },
   {
@@ -67,6 +96,9 @@
     "category": "advanced",
     "name": "Scope",
     "description": "Assault Rifles, Battle Rifles and Sniper Rifles only. +1 to Ranged Combat Ability Rolls at greater than half the weapons effective range.",
+    "effects": [
+      "AR, Battle/Sniper Rifles: +1 to Ranged CA Rolls at more than 50% Weapon range."
+    ],
     "value": 750
   },
   {
@@ -74,6 +106,10 @@
     "category": "special",
     "name": "Chest Rig",
     "description": "+1 Grenade Slot and +1 Equipment Slot.",
+    "effects": [
+      "+1 Grenade Slot.",
+      "+1 Equipment Slot."
+    ],
     "value": 1000
   },
   {
@@ -81,6 +117,10 @@
     "category": "special",
     "name": "Load Bearing West",
     "description": "+2 Grenade Slot and +2 Equipment Slot.",
+    "effects": [
+      "+2 Grenade Slots.",
+      "+2 Equipment Slots"
+    ],
     "value": 1500
   },
   {
@@ -88,6 +128,9 @@
     "category": "special",
     "name": "Under Barrel Grenade Launcher",
     "description": "Assault Rifles only. Adds a 40mm Grenade Launcher Option to a character's weapon.",
+    "effects": [
+      "Adds 40mm Grenade Launcher to 1 AR."
+    ],
     "value": 1800
   },
   {
@@ -95,6 +138,10 @@
     "category": "special",
     "name": "Kevlar Plates",
     "description": "+1 to Characters Armor Rating. Can be added twice per crew member.",
+    "effects": [
+      "+1 Armor Rating.",
+      "Max 2 per character."
+    ],
     "value": 1800
   },
   {
@@ -102,6 +149,9 @@
     "category": "special",
     "name": "Heavy Weapon Reload",
     "description": "+5 ammo of any single type of Limited Ammo weapon.",
+    "effects": [
+      "+5 Ammo of any 1 type of Limited Ammo"
+    ],
     "value": 2000
   }
 ]

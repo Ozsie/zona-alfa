@@ -5,10 +5,10 @@
 
   import skills from '../data/skills.json'
 
-  export let edit
+  export let edit = false
   export let crew
   export let member
-  export let compact
+  export let compact = true
 
 	let selectedSkill;
 </script>

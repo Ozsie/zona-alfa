@@ -1,6 +1,6 @@
 <script>
   export let value
-  export let edit
+  export let edit = false
   export let type = "text"
   export let change = () => {}
   export let rows = 5

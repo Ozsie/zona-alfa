@@ -6,6 +6,7 @@
   import Equipment from '../equipment/Equipment.svelte'
   import WeaponRows from '../weapons/WeaponRows.svelte'
   import Photo from '../Photo.svelte'
+  import PrintView from './PrintView.svelte'
 
 	import {store} from '../store.js';
 	import {crewBuilder} from '../crewBuilder.js';
@@ -17,6 +18,7 @@
 	export let show
 	export let edit = false
 	let compact = true
+  let print = false
 
 	crew = crewValidator.validateModel(crew)
 
@@ -37,89 +39,97 @@
 <div class="no-print">
   <button on:click={() => edit = !edit}>{#if edit}Lock{:else}Edit{/if}</button>
   <button on:click={() => compact = !compact}>{#if compact}Full{:else}Compact{/if}</button>
+  <button on:click={() => print = !print}>{#if print}Regular View{:else}Print View{/if}</button>
   <button on:click={() => show = false}>Back</button>
 </div>
-<div>K:{crew.k}</div>
-<CrewData bind:crew={crew} bind:edit={edit}/>
-<div class="pagebreak"> </div>
-<div class="grid-container">
-  {#each crew.members as member}
-    <div class="grid-item">
-      <table>
-        <tr class="no-print {edit ? '' : 'hide'}">
-          <td colspan="3">
-            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
-          </td>
-        </tr>
-        <tr>
-          <td rowspan="8">
-            <Photo bind:edit={edit} bind:member={member} bind:crew={crew}/>
-          </td>
-          <th class="r">Name</th>
-          <td class="l"><TextField bind:value={member.name} edit={edit}/></td>
-        </tr>
-        <tr>
-          <th class="r">Faction</th>
-          <td class="l">{crew.faction.name}</td>
-        </tr>
-        <tr>
-          <th class="r">Wounds</th>
-          <td class="l">{member.wounds}</td>
-        </tr>
-        <tr>
-          <th class="r">Combat XP</th>
-          <td class="l">{member.cost}</td>
-        </tr>
-        <tr>
-          <th class="r">Movement</th>
-          <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
-        </tr>
-        <tr>
-          <th class="r">Combat Ability</th>
-          <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
-        </tr>
-        <tr>
-          <th class="r">Armor</th>
-          <td class="l">{member.armor}</td>
-        </tr>
-        <tr>
-          <th class="r">Will</th>
-          <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
-        </tr>
-      </table>
-      <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
-      <Equipment bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
-      <WeaponRows bind:crew={crew} bind:member={member} bind:edit={edit}/>
-      <table>
-        <tr class="wide">
-          <th>Notes</th>
-        </tr>
-        <tr class="list wide">
-          <td class="wide fixed">
-            <TextField type="textarea" bind:value={member.notes} edit={edit}/>
-          </td>
-        </tr>
-      </table>
-      <div class="pagebreak"> </div>
-    </div>
-  {/each}
-</div>
-{#if edit}
-<div>
-  <label for="recruit">Add recruit</label>
-  <select bind:value={selectedRecruit} id="recruit">
-    {#each nonLeaders as newRecruit}
-      <option value="{newRecruit.id}">{newRecruit.name}</option>
+{#if print}
+  <PrintView crew={crew}/>
+{:else}
+  <CrewData bind:crew={crew} bind:edit={edit}/>
+  <div class="pagebreak"> </div>
+  <div class="grid-container">
+    {#each crew.members as member}
+      <div class="grid-item">
+        <table>
+          <tr class="no-print {edit ? '' : 'hide'}">
+            <td colspan="3">
+              <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="8">
+              <Photo bind:edit={edit} bind:member={member} bind:crew={crew}/>
+            </td>
+            <th class="r">Name</th>
+            <td class="l"><TextField bind:value={member.name} edit={edit}/></td>
+          </tr>
+          <tr>
+            <th class="r">Faction</th>
+            <td class="l">{crew.faction.name}</td>
+          </tr>
+          <tr>
+            <th class="r">Wounds</th>
+            <td class="l">{member.wounds}</td>
+          </tr>
+          <tr>
+            <th class="r">Combat XP</th>
+            <td class="l">{member.cost}</td>
+          </tr>
+          <tr>
+            <th class="r">Movement</th>
+            <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          </tr>
+          <tr>
+            <th class="r">Combat Ability</th>
+            <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          </tr>
+          <tr>
+            <th class="r">Armor</th>
+            <td class="l">{member.armor}</td>
+          </tr>
+          <tr>
+            <th class="r">Will</th>
+            <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          </tr>
+        </table>
+        <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
+        <Equipment bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
+        <WeaponRows bind:crew={crew} bind:member={member} bind:edit={edit}/>
+        <table>
+          <tr class="wide">
+            <th>Notes</th>
+          </tr>
+          <tr class="list wide">
+            <td class="wide fixed">
+              <TextField type="textarea" bind:value={member.notes} edit={edit}/>
+            </td>
+          </tr>
+        </table>
+        <div class="pagebreak"> </div>
+      </div>
     {/each}
-  </select>
-  <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
-</div>
-<button on:click={saveCrew}>Save</button>
+  </div>
+  {#if edit}
+  <div>
+    <label for="recruit">Add recruit</label>
+    <select bind:value={selectedRecruit} id="recruit">
+      {#each nonLeaders as newRecruit}
+        <option value="{newRecruit.id}">{newRecruit.name}</option>
+      {/each}
+    </select>
+    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
+  </div>
+  <button on:click={saveCrew}>Save</button>
+  {/if}
 {/if}
-<div class="no-print">
-  <button on:click={() => edit = !edit}>{#if edit}Lock{:else}Edit{/if}</button>
-  <button on:click={() => show = false}>Back</button>
-</div>
+{#if !print}
+  <div class="no-print">
+    <button on:click={() => edit = !edit}>{#if edit}Lock{:else}Edit{/if}</button>
+    <button on:click={() => compact = !compact}>{#if compact}Full{:else}Compact{/if}</button>
+    <button on:click={() => print = !print}>{#if print}Regular View{:else}Print View{/if}</button>
+    <button on:click={() => show = false}>Back</button>
+  </div>
+{/if}
 <style>
   th.r {
     text-align: right;
@@ -129,5 +139,8 @@
     text-align: left;
     width: 20%;
     padding-left: 10px;
+  }
+  .hide {
+    display: none;
   }
 </style>

@@ -6,6 +6,7 @@
   export let edit = false
   export let crew
   export let member
+  export let height = 128
 
   let  fileinput
   let addPhoto = (e) => {
@@ -18,9 +19,9 @@
   }
 </script>
 {#if member.photo}
-  <img src="{member.photo}" alt="{member.name}" height="128">
+  <img src="{member.photo}" alt="{member.name}" height="{height}">
 {:else}
-  <img src="soldier.png" alt="{member.name}" height="128">
+  <img src="soldier.png" alt="{member.name}" height="{height}">
 {/if}
 {#if edit}
   <div>

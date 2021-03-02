@@ -91,13 +91,10 @@ select {
 div {
   padding-top: 5px;
 }
-td.list {
+.list {
   text-align: left;
 }
-tr.list {
-  text-align: left;
-}
-span.listHeader {
+.listHeader {
   font-weight: bold;
 }
 select {
@@ -106,13 +103,13 @@ select {
 .wide {
   width: 100%;
 }
-td.notes {
+.notes {
   height: 100px;
 }
-td.fixed {
+.fixed {
   height: 110px;
 }
-td.fixedTall {
+.fixedTall {
   height: 135px;
 }
 .grid-container {
