@@ -93,6 +93,11 @@ let removeEquipment = (equipment, member, crew) => {
   return crew
 }
 
+let removePhoto = (member, crew) => {
+  member.photo = ""
+  return crew
+}
+
 let changeFaction = (factionId, crew) => {
   var faction = createFaction(factionId)
   crew.faction = faction
@@ -178,4 +183,19 @@ let createUUID = () => {
   return uuid;
 }
 
-export var crewBuilder = { create, addRecruit, removeMember, updateK, addSkill, addBasicEquipment, addWeapon, removeSkill, removeEquipment, removeWeapon, changeFaction, hasSkill, hasEquipment }
+export var crewBuilder = {
+  create,
+  addRecruit,
+  addSkill,
+  addBasicEquipment,
+  addWeapon,
+  removePhoto,
+  removeMember,
+  removeSkill,
+  removeEquipment,
+  removeWeapon,
+  updateK,
+  changeFaction,
+  hasSkill,
+  hasEquipment
+}
