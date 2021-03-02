@@ -110,10 +110,10 @@ td.notes {
   height: 100px;
 }
 td.fixed {
-  height: 138px;
+  height: 110px;
 }
 td.fixedTall {
-  height: 150px;
+  height: 135px;
 }
 .grid-container {
   grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
