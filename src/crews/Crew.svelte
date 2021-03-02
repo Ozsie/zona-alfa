@@ -5,6 +5,7 @@
   import Skills from '../skills/Skills.svelte'
   import Equipment from '../equipment/Equipment.svelte'
   import WeaponRows from '../weapons/WeaponRows.svelte'
+  import Photo from '../Photo.svelte'
 
 	import {store} from '../store.js';
 	import {crewBuilder} from '../crewBuilder.js';
@@ -47,33 +48,44 @@
     <div class="grid-item">
       <table>
         <tr class="no-print {edit ? "" : "hide"}">
-          <td colspan="4">
+          <td colspan="3">
             <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
           </td>
         </tr>
         <tr>
-          <th>Name</th>
-          <td><TextField bind:value={member.name} edit={edit}/></td>
-          <th>Faction</th>
-          <td>{crew.faction.name}</td>
+          <td rowspan="8">
+            <Photo bind:edit={edit} bind:member={member} bind:crew={crew}/>
+          </td>
+          <th class="r">Name</th>
+          <td class="l"><TextField bind:value={member.name} edit={edit}/></td>
         </tr>
         <tr>
-          <th>Wounds</th>
-          <td>{member.wounds}</td>
-          <th>Combat Experience</th>
-          <td>{member.cost}</td>
+          <th class="r">Faction</th>
+          <td class="l">{crew.faction.name}</td>
         </tr>
         <tr>
-          <th>Movement</th>
-          <th>Combat Ability</th>
-          <th>Armor</th>
-          <th>Will</th>
+          <th class="r">Wounds</th>
+          <td class="l">{member.wounds}</td>
         </tr>
         <tr>
-          <td><TextField bind:value={member.movement} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
-          <td><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
-          <td>{member.armor}</td>
-          <td><TextField bind:value={member.will} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          <th class="r">Combat XP</th>
+          <td class="l">{member.cost}</td>
+        </tr>
+        <tr>
+          <th class="r">Movement</th>
+          <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+        </tr>
+        <tr>
+          <th class="r">Combat Ability</th>
+          <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+        </tr>
+        <tr>
+          <th class="r">Armor</th>
+          <td class="l">{member.armor}</td>
+        </tr>
+        <tr>
+          <th class="r">Will</th>
+          <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
         </tr>
       </table>
       <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
@@ -112,5 +124,14 @@
 <style>
   .hide {
     display: none;
+  }
+  th.r {
+    text-align: right;
+    width: 20%;
+  }
+  td.l {
+    text-align: left;
+    width: 20%;
+    padding-left: 10px;
   }
 </style>

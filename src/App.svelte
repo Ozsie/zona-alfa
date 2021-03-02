@@ -7,20 +7,21 @@
 	<Crews/>
 	<div class="footer">
     <div>
-      <a href="https://ospreypublishing.com/zona-alfa?___store=osprey_rst" title="Zona Alfa">Zona Alfa</a> © <a href="https://ospreypublishing.com/" title="Osprey Publishing">Osprey Publishing</a>
+      <a href="https://ospreypublishing.com/zona-alfa?___store=osprey_rst" title="Zona Alfa" target="_blank">Zona Alfa</a> © <a href="https://ospreypublishing.com/" title="Osprey Publishing" target="_blank">Osprey Publishing</a>
     </div>
     <div class="no-print">
       Resources:
-      <a href="https://www.reddit.com/r/ZonaAlfa/" title="r/ZonaAlfa">r/ZonaAlfa</a> |
-      <a href="https://boardgamegeek.com/boardgame/284981/zona-alfa-salvage-and-survival-exclusion-zone" title="Zona Alfa BGG">Zona Alfa BGG</a> |
-      <a href="https://ospreypublishing.com/gaming-resources-owg#zonaalfa" title="Gaming Resources">Gaming Resources</a>
+      <a href="https://www.reddit.com/r/ZonaAlfa/" title="r/ZonaAlfa" target="_blank">r/ZonaAlfa</a> |
+      <a href="https://boardgamegeek.com/boardgame/284981/zona-alfa-salvage-and-survival-exclusion-zone" title="Zona Alfa BGG" target="_blank">Zona Alfa BGG</a> |
+      <a href="https://ospreypublishing.com/gaming-resources-owg#zonaalfa" title="Gaming Resources" target="_blank">Gaming Resources</a>
     </div>
     <div class="no-print">
       Icons made by
-      <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a>,
-      <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>,
-      <a href="https://www.freepik.com" title="Freepik">Freepik</a>
-      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <a href="https://creativemarket.com/eucalyp" title="Eucalyp" target="_blank">Eucalyp</a>,
+      <a href="https://www.flaticon.com/authors/becris" title="Becris" target="_blank">Becris</a>,
+      <a href="https://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
+      <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank">Pixel perfect</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
     </div>
   </div>
 </main>
