@@ -1,5 +1,6 @@
 import skills from './data/skills.json'
 import equipment from './data/equipment.json'
+import recruits from './data/recruits.json'
 
 let validateModel = (crew) => {
   crew.members.forEach(validateMember)
@@ -11,6 +12,16 @@ let validateModel = (crew) => {
     crew.artifacts = ""
   }
 
+  return crew
+}
+
+let validateStat = (stat, member, crew) => {
+  let def = recruits.find(r => r.id === member.id)[stat]
+  if (member[stat] < def) {
+    member[stat] = def
+  } else if (member[stat] > def + 2) {
+    member[stat] = def + 2
+  }
   return crew
 }
 
@@ -62,4 +73,4 @@ let validateWeapon = (weapon, member) => {
   }
 }
 
-export var crewValidator = { validateModel }
+export var crewValidator = { validateModel, validateStat }
