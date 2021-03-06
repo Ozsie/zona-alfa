@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Vermin Swarm",
+    "actions": "Threat Level",
+    "move": 6,
+    "combatAbility": 4,
+    "armor": 2,
+    "will": 4,
+    "weapon": 0,
+    "spawn": [
+      {"tl": 1, "roll": 1, "count": "1","anomaly": false},
+      {"tl": 1, "roll": 2, "count": "2","anomaly": false}
+    ]
+  },
+  {
+    "name": "Vermin Swarm (X2)",
+    "actions": "Threat Level",
+    "move": 6,
+    "combatAbility": 4,
+    "armor": 2,
+    "will": 4,
+    "weapon": 0,
+    "spawn": [
+      {"tl": 2, "roll": 1, "count": "1","anomaly": false}
+    ]
+  },
+  {
+    "name": "Feral Dogs",
+    "actions": "Threat Level",
+    "move": 8,
+    "combatAbility": 4,
+    "armor": 2,
+    "will": 4,
+    "weapon": 0,
+    "spawn": [
+      {"tl": 1, "roll": 3,
+        "count": "4",
+        "anomaly": false
+      },
+      {"tl": 2, "roll": 2,
+        "count": "6",
+        "anomaly": false
+      },
+      {"tl": 3, "roll": 1,
+        "count": "6",
+        "anomaly": false
+      }
+    ]
+  },
+  {
+    "name": "Zombies",
+    "actions": "Threat Level",
+    "move": 4,
+    "combatAbility": 4,
+    "armor": 6,
+    "will": 0,
+    "weapon": 0,
+    "spawn": [
+      {"tl": 1, "roll": 4,
+        "count": "4",
+        "anomaly": false
+      },
+      {"tl": 2, "roll": 3,
+        "count": "6",
+        "anomaly": false
+      },
+      {"tl": 3, "roll": 2,
+        "count": "8",
+        "anomaly": false
+      }
+    ]
+  },
+  {
+    "name": "Rad Ghoul",
+    "actions": "Threat Level",
+    "move": 7,
+    "combatAbility": 5,
+    "armor": 4,
+    "will": 6,
+    "weapon": 1,
+    "spawn": [
+      {"tl": 1, "roll": 5,
+        "count": "4",
+        "anomaly": false
+      },
+      {"tl": 2, "roll": 4,
+        "count": "6",
+        "anomaly": false
+      },
+      {"tl": 3, "roll": 3,
+        "count": "6",
+        "anomaly": false
+      }
+    ]
+  },
+  {
+    "name": "Bandit",
+    "actions": "Threat Level",
+    "move": 6,
+    "combatAbility": 5,
+    "armor": 5,
+    "will": 6,
+    "weapon": "Ranged/Melee as modeled",
+    "spawn": [
+      {"tl": 1, "roll": 6,
+        "count": "4",
+        "anomaly": true
+      },
+      {"tl": 2, "roll": 5,
+        "count": "4",
+        "anomaly": true
+      },
+      {"tl": 3, "roll": 4,
+        "count": "4",
+        "anomaly": true
+      }
+    ]
+  },
+  {
+    "name": "Mutant",
+    "actions": "Threat Level",
+    "move": 6,
+    "combatAbility": "4-6",
+    "armor": "4-6",
+    "will": 6,
+    "weapon": 1,
+    "spawn": [
+      {"tl": 2, "roll": 6,
+        "count": "1",
+        "anomaly": true
+      },
+      {"tl": 3, "roll": 5,
+        "count": "2",
+        "anomaly": true
+      }
+    ]
+  },
+  {
+    "name": "Large Mutant",
+    "actions": "Threat Level",
+    "move": 6,
+    "combatAbility": "5-7",
+    "armor": "5-7",
+    "will": 7,
+    "weapon": 2,
+    "spawn": [
+      {"tl": 3, "roll": 6,
+        "count": "1",
+        "anomaly": true
+      }
+    ]
+  }
+]

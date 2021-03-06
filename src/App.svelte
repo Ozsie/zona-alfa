@@ -5,6 +5,7 @@
 
 <main>
 	<h1 class="no-print">Zona Alfa Crew Builder</h1>
+  <a href="#/crew/new/edit">New Crew</a> | <a href="#/tables">Tables</a>
   <Router {routes} />
 	<div class="footer">
     <div>

@@ -1,0 +1,26 @@
+[
+  {
+    "value": 2000,
+    "bonus": ""
+  },
+  {
+    "value": 3500,
+    "bonus": ""
+  },
+  {
+    "value": 4500,
+    "bonus": ""
+  },
+  {
+    "value": 2000,
+    "bonus": "+1\" Movement"
+  },
+  {
+    "value": 3500,
+    "bonus": "+1 Armor"
+  },
+  {
+    "value": 4500,
+    "bonus": "+1 Will"
+  }
+]

@@ -29,7 +29,6 @@
   }
 </script>
 
-<a href="#/crew/new/edit">Add Crew</a>
 <ul>
 	{#each crewList as eCrew}
 		<li>
