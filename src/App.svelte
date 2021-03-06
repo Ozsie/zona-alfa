@@ -1,10 +1,11 @@
 <script>
-	import Crews from './Crews.svelte';
+  import Router from 'svelte-spa-router'
+  import routes from './routes'
 </script>
 
 <main>
 	<h1 class="no-print">Zona Alfa Crew Builder</h1>
-	<Crews/>
+  <Router {routes} />
 	<div class="footer">
     <div>
       <a href="https://ospreypublishing.com/zona-alfa?___store=osprey_rst" title="Zona Alfa" target="_blank">Zona Alfa</a> © <a href="https://ospreypublishing.com/" title="Osprey Publishing" target="_blank">Osprey Publishing</a>

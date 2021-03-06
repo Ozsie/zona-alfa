@@ -11,10 +11,15 @@
     import {crewValidator} from '../crewValidator.js';
 
     import recruits from '../data/recruits.json'
+    import {location} from "svelte-spa-router";
 
-    export let crew = {}
-    export let edit = false
+    export let params = {}
+
+    let crew = params.crew === 'new' ? crewBuilder.create("",0) : store.crews.find(c => c.id === params.crew)
+    let show
+    let edit = false
     let compact = true
+    let print = false
 
     crew = crewValidator.validateModel(crew)
 

@@ -28,22 +28,17 @@
     crew = c
   }
 </script>
-{#if !newCrew && !view}
-	<button on:click={() => editCrew(crewBuilder.create("",0))}>Add Crew</button>
-	<ul>
-		{#each crewList as eCrew}
-			<li>
-				<img on:click={() => editCrew(eCrew)} src="./edit.png" width=16 alt="Edit"/>
-				<img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
-				<a on:click={() => viewCrew(eCrew)} on:>{eCrew.name} ({eCrew.k} K)</a>
-			</li>
-		{/each}
-	</ul>
-{:else if newCrew && !view}
-	<Crew crew={crew} bind:show={newCrew} edit={true}/>
-{:else}
-	<Crew crew={crew} bind:show={view} edit={false}/>
-{/if}
+
+<a href="#/crew/new/edit">Add Crew</a>
+<ul>
+	{#each crewList as eCrew}
+		<li>
+			<a href="#/crew/{eCrew.id}/edit"><img src="./edit.png" width=16 alt="Edit"/></a>
+			<img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
+			<a href="#/crew/{eCrew.id}/view">{eCrew.name} ({eCrew.k} K)</a>
+		</li>
+	{/each}
+</ul>
 
 <style>
   ul {
