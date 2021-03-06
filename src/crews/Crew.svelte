@@ -10,8 +10,7 @@
 	import {store} from '../store.js';
 	import {crewBuilder} from '../crewBuilder.js';
 	import {crewValidator} from '../crewValidator.js';
-  import {location} from 'svelte-spa-router'
-  import {push, pop, replace} from 'svelte-spa-router'
+  import {location, push, replace} from 'svelte-spa-router'
 
   import recruits from '../data/recruits.json'
 
@@ -24,9 +23,10 @@
 
 	crew = crewValidator.validateModel(crew)
 
-	let nonLeaders = recruits.filter(r => r.name !== "Leader");
+	let nonLeaders = recruits.filter(r => r.name !== "Leader")
 
-	let selectedRecruit;
+	let selectedRecruit
+  let exportString
 
 	function saveCrew() {
 	  let index = store.crews.findIndex(c => c.id === crew.id)
@@ -43,12 +43,42 @@
       crew = crewBuilder.updateK(crew)
       crew = crewValidator.validateStat(stat, member, crew)
   }
+
+  function copyExport() {
+      let copyText = document.querySelector("#exportArea");
+      copyText.select();
+      document.execCommand("copy");
+  }
 </script>
 <div class="no-print">
   <button on:click={() => replace('/crew/' + crew.id + '/' + (edit ? 'view' : 'edit'))}>{#if edit}Lock{:else}Edit{/if}</button>
   <button on:click={() => compact = !compact}>{#if compact}Full{:else}Compact{/if}</button>
   <button on:click={() => push('/print/' + crew.id)}>Print View</button>
+  <button on:click={() => exportString = store.exportCrew(crew.id)}>Export</button>
 </div>
+{#if edit}
+  <div>
+    <label for="recruit">Add recruit</label>
+    <select bind:value={selectedRecruit} id="recruit">
+      {#each nonLeaders as newRecruit}
+        <option value="{newRecruit.id}">{newRecruit.name}</option>
+      {/each}
+    </select>
+    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
+  </div>
+  <button on:click={saveCrew}>Save</button>
+{/if}
+{#if exportString}
+  <div class="export">
+    <span>Crew Export: </span>
+    <br>
+    <textarea class="expString" id="exportArea">{exportString}</textarea>
+    <button on:click={() => copyExport()}>Copy</button>
+    <button on:click={() => exportString = undefined}>Hide</button>
+    <br>
+    <span>Copy above string and store it somewhere.</span>
+  </div>
+{/if}
 <CrewData bind:crew={crew} bind:edit={edit}/>
 <div class="pagebreak"> </div>
 <div class="grid-container">
@@ -125,11 +155,6 @@
   </div>
   <button on:click={saveCrew}>Save</button>
 {/if}
-<div class="no-print">
-  <button on:click={() => replace('/crew/' + crew.id + '/' + (edit ? 'view' : 'edit'))}>{#if edit}Lock{:else}Edit{/if}</button>
-  <button on:click={() => compact = !compact}>{#if compact}Full{:else}Compact{/if}</button>
-  <button on:click={() => push('/print/' + crew.id)}>Print View</button>
-</div>
 <style>
   th.r {
     text-align: right;
@@ -142,5 +167,14 @@
   }
   .hide {
     display: none;
+  }
+  .export {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .expString {
+    word-wrap:break-word;
+    width: 100%;
+    height: 100px;
   }
 </style>

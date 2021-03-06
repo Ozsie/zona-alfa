@@ -55,6 +55,9 @@
         </span>
         <br>
       {/each}
+      <span>Allies: </span><span>{crew.faction.allies.join(',')}</span>
+      <br>
+      <span>Enemies: </span><span>{crew.faction.enemies.join(',')}</span>
       <TextField type="textarea" bind:value={crew.notes} edit={edit}/>
     </td>
   </tr>
