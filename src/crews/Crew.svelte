@@ -38,6 +38,11 @@
 	  store.save(store.crews)
     replace('/crew/' + crew.id + '/edit')
 	}
+
+  function updateStat(stat, member) {
+      crew = crewBuilder.updateK(crew)
+      crew = crewValidator.validateStat(stat, member, crew)
+  }
 </script>
 <div class="no-print">
   <button on:click={() => replace('/crew/' + crew.id + '/' + (edit ? 'view' : 'edit'))}>{#if edit}Lock{:else}Edit{/if}</button>
@@ -76,11 +81,11 @@
         </tr>
         <tr>
           <th class="r">Movement</th>
-          <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => updateStat("movement", member)}/></td>
         </tr>
         <tr>
           <th class="r">Combat Ability</th>
-          <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => updateStat("combatAbility", member)}/></td>
         </tr>
         <tr>
           <th class="r">Armor</th>
@@ -88,7 +93,7 @@
         </tr>
         <tr>
           <th class="r">Will</th>
-          <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => crew = crewBuilder.updateK(crew)}/></td>
+          <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => updateStat("will", member)}/></td>
         </tr>
       </table>
       <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
