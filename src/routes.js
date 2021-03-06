@@ -7,13 +7,7 @@ export default {
     // Exact path
     '/': Crews,
     '/tables': Tables,
-    '/crew/:crew/edit': wrap({
-        // Note that this is a function that returns the import
-        asyncComponent: () => import('./crews/Crew.svelte')
-    }),
-    '/crew/:crew/view': wrap({
-        // Note that this is a function that returns the import
-        asyncComponent: () => import('./crews/Crew.svelte')
-    }),
+    '/crew/:crew/edit': Crew,
+    '/crew/:crew/view': Crew,
     '/print/:crew': PrintView
 }
