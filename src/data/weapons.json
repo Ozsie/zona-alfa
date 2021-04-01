@@ -498,5 +498,48 @@
       "template": "LBT"
     },
     "rules": []
+  },
+  {
+    "id": 22,
+    "category": "melee",
+    "types": [
+      "Chainsaw"
+    ],
+    "range": {
+      "min": 0,
+      "max": 0
+    },
+    "firepower": {
+      "value": 3,
+      "per": ""
+    },
+    "damage": {
+      "value": 1,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
+  },
+  {
+    "id": 23,
+    "category": "melee",
+    "types": [
+      "Club",
+      "Baseball bat"
+    ],
+    "range": {
+      "min": 0,
+      "max": 0
+    },
+    "firepower": {
+      "value": 1,
+      "per": ""
+    },
+    "damage": {
+      "value": 0,
+      "per": "",
+      "template": ""
+    },
+    "rules": []
   }
 ]
