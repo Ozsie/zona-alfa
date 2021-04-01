@@ -132,6 +132,7 @@ let createLeader = (factionName) => {
 let createMember = (recruitId, factionName) => {
   let member = JSON.parse(JSON.stringify(findRecruit(recruitId)));
   let armor = findArmor(member.armor);
+  member.experience = member.name
   member.name = ""
   member.armor = armor.armor
   member.equipment = [armor]

@@ -17,8 +17,8 @@ let validateModel = (crew) => {
 
 let validateStat = (stat, member, crew) => {
   let def = recruits.find(r => r.id === member.id)[stat]
-  if (member[stat] < def) {
-    member[stat] = def
+  if (member[stat] < 1) {
+    member[stat] = 1
   } else if (member[stat] > def + 2) {
     member[stat] = def + 2
   }
@@ -32,6 +32,19 @@ let validateMember = (member) => {
   if (!member.notes) {
     member.notes = ""
   }
+  switch (member.cost) {
+    case 0:
+    case 1:
+      member.experience = "Rookie"
+      break
+    case 2:
+      member.experience = "Hardened"
+      break
+    case 3:
+    default:
+      member.experience = "Veteran"
+  }
+  return member
 }
 
 let validateEquipment = (quip) => {
@@ -73,4 +86,4 @@ let validateWeapon = (weapon, member) => {
   }
 }
 
-export var crewValidator = { validateModel, validateStat }
+export var crewValidator = { validateModel, validateStat, validateMember }

@@ -41,6 +41,7 @@
 
   function updateStat(stat, member) {
       crew = crewBuilder.updateK(crew)
+      member = crewValidator.validateMember(member)
       crew = crewValidator.validateStat(stat, member, crew)
   }
 
@@ -103,11 +104,11 @@
         </tr>
         <tr>
           <th class="r">Wounds</th>
-          <td class="l">{member.wounds}</td>
+          <td class="l"><TextField bind:value={member.wounds} edit={edit} type="number" change={() => updateStat("wounds", member)}/></td>
         </tr>
         <tr>
           <th class="r">Combat XP</th>
-          <td class="l">{member.cost}</td>
+          <td class="l"><TextField bind:value={member.cost} edit={edit} type="number" change={() => updateStat("cost", member)}/> {#if !compact}({member.experience}){/if}</td>
         </tr>
         <tr>
           <th class="r">Movement</th>
