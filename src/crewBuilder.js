@@ -83,11 +83,21 @@ let addBasicEquipment = (equipmentId, member, crew) => {
   return crew
 }
 
+let addArmor = (armorId, member, crew) => {
+  let armor = JSON.parse(JSON.stringify(findArmor(armorId)));
+  member.equipment = [...member.equipment, armor]
+  member.options.armor = 0
+  member.armor = armor.armor
+  return crew
+}
+
 let removeEquipment = (equipment, member, crew) => {
+  let index = member.equipment.findIndex(e => e === equipment);
+  member.equipment.splice(index, 1)
   if (!equipment.armor) {
-    let index = member.equipment.findIndex(e => e === equipment);
-    member.equipment.splice(index, 1)
     member.options.basicEquipment++
+  } else {
+    member.options.armor = 1
   }
   return crew
 }
@@ -187,6 +197,7 @@ export var crewBuilder = {
   addSkill,
   addBasicEquipment,
   addWeapon,
+  addArmor,
   removePhoto,
   removeMember,
   removeSkill,

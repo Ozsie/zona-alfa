@@ -4,6 +4,7 @@
   import {crewBuilder} from '../crewBuilder.js';
 
   import equipment from '../data/equipment.json'
+  import armors from '../data/armors.json'
 
   export let edit = false
   export let compact = true
@@ -13,6 +14,7 @@
 
 	let basicEquipment = equipment.filter(e => e.category === "basic");
 	let selectedEquipment;
+	let selectedArmor;
 </script>
 <table>
   <tr class="wide">
@@ -22,9 +24,7 @@
     <td class="wide equipment {print ? 'print' : 'fixedTall'}" colspan="4">
       {#each member.equipment as equipment}
         <div>
-          {#if !equipment.armor}
-            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeEquipment(equipment, member, crew)}/>
-          {/if}
+          <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeEquipment(equipment, member, crew)}/>
           {#if compact && equipment.rules}
             <span class="listHeader">{equipment.name}:</span> {#if equipment.armor}Armor {equipment.armor}<br>{/if}
             {#each equipment.rules as rule, i}
@@ -55,6 +55,15 @@
           {/each}
         </select>
         <button on:click={() => crew = crewBuilder.addBasicEquipment(selectedEquipment, member, crew)}>Add</button>
+      {/if}
+      {#if member.options.armor === 1 && edit}
+        <label for="armor">Add armor</label>
+        <select bind:value={selectedArmor} id="armor">
+          {#each armors as armor}
+            <option value="{armor.id}">{armor.name}</option>
+          {/each}
+        </select>
+        <button on:click={() => crew = crewBuilder.addArmor(selectedArmor, member, crew)}>Add</button>
       {/if}
     </td>
   </tr>
