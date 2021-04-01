@@ -20,9 +20,7 @@
     <td class="wide fixed">
       {#each member.skills as skill}
         <div>
-          {#if skill.name !== "Leader"}
-            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeSkill(skill, member, crew)}/>
-          {/if}
+          <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeSkill(skill, member, crew)}/>
           <span class="listHeader">{skill.name}:</span>
           {#if compact}
             {#each skill.effects as effect, i}

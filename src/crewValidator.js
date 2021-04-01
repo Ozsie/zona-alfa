@@ -19,7 +19,7 @@ let validateStat = (stat, member, crew) => {
   let def = recruits.find(r => r.id === member.id)[stat]
   if (member[stat] < 1) {
     member[stat] = 1
-  } else if (member[stat] > def + 2) {
+  } else if (member[stat] > def + 2 && !member.leader) {
     member[stat] = def + 2
   }
   return crew
@@ -32,6 +32,7 @@ let validateMember = (member) => {
   if (!member.notes) {
     member.notes = ""
   }
+  member.leader = !!member.skills.find(s => s.id === 5);
   switch (member.cost) {
     case 0:
     case 1:

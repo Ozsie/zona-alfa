@@ -64,14 +64,20 @@ let addSkill = (skillId, member, crew) => {
   let skill = JSON.parse(JSON.stringify(findSkill(skillId)));
   member.skills = [...member.skills, skill]
   member.options.skill--
+  if (skill.name === "Leader") {
+    member.wounds++
+    member.leader = true
+  }
   return crew
 }
 
 let removeSkill = (skill, member, crew) => {
-  if (skill.name !== "Leader") {
-    let index = member.skills.findIndex(s => s === skill);
-    member.skills.splice(index, 1)
-    member.options.skill++
+  let index = member.skills.findIndex(s => s === skill);
+  member.skills.splice(index, 1)
+  member.options.skill++
+  if (skill.name === "Leader") {
+    member.wounds--
+    member.leader = false
   }
   return crew
 }
