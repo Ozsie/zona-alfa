@@ -12,15 +12,17 @@
 <table class="pad">
   <tr>
     <th>Crew Name</th>
-    <td><TextField bind:value={crew.name} edit={edit}/></td>
+    <td>
+      <TextField bind:value={crew.name} edit={edit}/>
+    </td>
     <th>Faction</th>
     <td>
       {#if edit}
-      <select bind:value={crew.faction.id} on:change={() => crew = crewBuilder.changeFaction(crew.faction.id, crew)}>
-        {#each factions as faction}
-          <option value={faction.id}>{faction.name}</option>
-        {/each}
-      </select>
+        <select bind:value={crew.faction.id} on:change={() => crew = crewBuilder.changeFaction(crew.faction.id, crew)}>
+          {#each factions as faction}
+            <option value={faction.id}>{faction.name}</option>
+          {/each}
+        </select>
       {:else}
         {crew.faction.name}
       {/if}
@@ -51,7 +53,8 @@
     <td class="wide {print ? 'notes' :''}" colspan="6">
       {#each crew.faction.discounts as {type, value, times}, i}
         <span>
-          {value}% discount on {type} {#if times === -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.
+          {value}% discount on {type}
+          {#if times === -2}once every visit{:else if times > 0}on {times} occasions{/if} at The Stalls.
         </span>
         <br>
       {/each}
@@ -67,12 +70,15 @@
     padding-left: 2px;
     padding-right: 2px;
   }
+
   .artifacts {
     height: 350px;
   }
+
   .notes {
-      height: 550px;
+    height: 550px;
   }
+
   table {
     table-layout: fixed;
     width: 100%;

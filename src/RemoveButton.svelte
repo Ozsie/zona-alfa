@@ -1,7 +1,8 @@
 <script>
   export let edit
-  export let click = () => {}
+  export let click = () => {
+  }
 </script>
 {#if edit}
-<img alt="Remove" src="./remove.png" width=12 on:click={click}/>
+  <img alt="Remove" src="./remove.png" width=12 on:click={click}/>
 {/if}

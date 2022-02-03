@@ -4,17 +4,21 @@
 </script>
 
 <main>
-	<h1 class="no-print">Zona Alfa Crew Builder</h1>
-  <Router {routes} />
-	<div class="footer">
+  <h1 class="no-print">Zona Alfa Crew Builder</h1>
+  <Router {routes}/>
+  <div class="footer">
     <div>
-      <a href="https://ospreypublishing.com/zona-alfa?___store=osprey_rst" title="Zona Alfa" target="_blank">Zona Alfa</a> © <a href="https://ospreypublishing.com/" title="Osprey Publishing" target="_blank">Osprey Publishing</a>
+      <a href="https://ospreypublishing.com/zona-alfa?___store=osprey_rst" title="Zona Alfa" target="_blank">Zona
+        Alfa</a> © <a href="https://ospreypublishing.com/" title="Osprey Publishing" target="_blank">Osprey
+      Publishing</a>
     </div>
     <div class="no-print">
       Resources:
       <a href="https://www.reddit.com/r/ZonaAlfa/" title="r/ZonaAlfa" target="_blank">r/ZonaAlfa</a> |
-      <a href="https://boardgamegeek.com/boardgame/284981/zona-alfa-salvage-and-survival-exclusion-zone" title="Zona Alfa BGG" target="_blank">Zona Alfa BGG</a> |
-      <a href="https://ospreypublishing.com/gaming-resources-owg#zonaalfa" title="Gaming Resources" target="_blank">Gaming Resources</a>
+      <a href="https://boardgamegeek.com/boardgame/284981/zona-alfa-salvage-and-survival-exclusion-zone"
+         title="Zona Alfa BGG" target="_blank">Zona Alfa BGG</a> |
+      <a href="https://ospreypublishing.com/gaming-resources-owg#zonaalfa" title="Gaming Resources" target="_blank">Gaming
+        Resources</a>
     </div>
     <div class="no-print">
       Icons made by
@@ -28,26 +32,26 @@
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 10px;
-		margin: 0 auto;
-	}
+  main {
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 2em;
-		font-weight: 100;
-	}
+  h1 {
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 100;
+  }
 
-	.footer {
-	  font-size: 6pt;
-	}
+  .footer {
+    font-size: 6pt;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  @media (min-width: 640px) {
+    main {
+      max-width: none;
+    }
+  }
 </style>

@@ -74,10 +74,10 @@ let validateWeapon = (weapon, member) => {
       weapon.option = "rangedWeapon"
     } else {
       var otherWeapons = member.weapons
-        .filter(w => w !== weapon)
-        .filter(w => w.category !== "grenade")
-        .filter(w => w.category === "melee")
-        .filter(w => w.option)
+          .filter(w => w !== weapon)
+          .filter(w => w.category !== "grenade")
+          .filter(w => w.category === "melee")
+          .filter(w => w.option)
       if (otherWeapons.length > 0) {
         weapon.option = "meleeWeapon"
       } else {
@@ -87,4 +87,4 @@ let validateWeapon = (weapon, member) => {
   }
 }
 
-export var crewValidator = { validateModel, validateStat, validateMember }
+export var crewValidator = {validateModel, validateStat, validateMember}

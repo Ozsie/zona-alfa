@@ -10,7 +10,7 @@
   export let member
   export let compact = true
 
-	let selectedSkill;
+  let selectedSkill;
 </script>
 <table>
   <tr class="wide">

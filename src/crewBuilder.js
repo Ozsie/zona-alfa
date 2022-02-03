@@ -161,15 +161,15 @@ let createMember = (recruitId, factionName) => {
 }
 
 let findSkill = (skillId) => {
-    return skills.find(skill => skill.id === skillId)
+  return skills.find(skill => skill.id === skillId)
 }
 
 let findRecruit = (recruitId) => {
-    return recruits.find(recruit => recruit.id === recruitId)
+  return recruits.find(recruit => recruit.id === recruitId)
 }
 
 let findArmor = (armorId) => {
-    return armors.find(armor => armor.id === armorId)
+  return armors.find(armor => armor.id === armorId)
 }
 
 let findWeapon = (weaponId) => {

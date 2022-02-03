@@ -3,8 +3,9 @@
 
   export let label = "Add weapon"
   export let weaponSet = "all"
-	export let selectedWeapon;
-	export let click = () => {}
+  export let selectedWeapon;
+  export let click = () => {
+  }
 
   let rangedWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.max !== 0);
   let meleeWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.min === 0);
@@ -12,17 +13,17 @@
 
   let selectedSet = weapons
 
-	switch(weaponSet) {
-	  case "ranged":
-	    selectedSet = rangedWeapons
-	    break
-	  case "melee":
-	    selectedSet = meleeWeapons
-	    break
-	  case "grenades":
-	    selectedSet = grenades
-	    break
-	}
+  switch (weaponSet) {
+    case "ranged":
+      selectedSet = rangedWeapons
+      break
+    case "melee":
+      selectedSet = meleeWeapons
+      break
+    case "grenades":
+      selectedSet = grenades
+      break
+  }
 </script>
 <tr class="list">
   <td class="wide" colspan="4">

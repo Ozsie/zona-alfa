@@ -1,5 +1,6 @@
 <script>
-    export let click = () => {}
+  export let click = () => {
+  }
 </script>
 <span class="no-print">
   <a on:click={click} href="#/">Home</a> |

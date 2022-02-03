@@ -2,7 +2,8 @@
   export let value
   export let edit = false
   export let type = "text"
-  export let change = () => {}
+  export let change = () => {
+  }
   export let rows = 5
 </script>
 {#if edit}
@@ -18,10 +19,11 @@
 {/if}
 
 <style>
-	input {
-	  width: 80%;
-	}
-	textarea {
-	  width: 100%;
-	}
+  input {
+    width: 80%;
+  }
+
+  textarea {
+    width: 100%;
+  }
 </style>

@@ -1,16 +1,17 @@
 <script>
-  import {store} from './store.js';
+	import {store} from './store.js';
 	import Menu from "./Menu.svelte";
 
 	let crewList = store.crews;
 
-	let newCrew = false;
-	let view = false;
+  let newCrew = false;
+  let view = false;
 
-	let crew;
-	function editCrew(c) {
-		newCrew = true;
-		crew = c
+  let crew;
+
+  function editCrew(c) {
+    newCrew = true;
+    crew = c
   }
 
   function deleteCrew(c) {
@@ -30,17 +31,17 @@
 
 <Menu/>
 <ul>
-	{#each crewList as eCrew}
-		<li>
-			<a href="#/crew/{eCrew.id}/edit"><img src="./edit.png" width=16 alt="Edit"/></a>
-			<img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
-			<a href="#/crew/{eCrew.id}/view">{eCrew.name} ({eCrew.k} K)</a>
-		</li>
-	{/each}
+  {#each crewList as eCrew}
+    <li>
+      <a href="#/crew/{eCrew.id}/edit"><img src="./edit.png" width=16 alt="Edit"/></a>
+      <img on:click={() => deleteCrew(eCrew)} src="./remove.png" width=16 alt="Delete"/>
+      <a href="#/crew/{eCrew.id}/view">{eCrew.name} ({eCrew.k} K)</a>
+    </li>
+  {/each}
 </ul>
 
 <style>
   ul {
-	  text-align: left;
+    text-align: left;
   }
 </style>
