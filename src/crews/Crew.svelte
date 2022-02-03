@@ -7,53 +7,59 @@
   import WeaponRows from '../weapons/WeaponRows.svelte'
   import Photo from '../Photo.svelte'
 
-	import {store} from '../store.js';
-	import {crewBuilder} from '../crewBuilder.js';
-	import {crewValidator} from '../crewValidator.js';
+  import {store} from '../store.js';
+  import {crewBuilder} from '../crewBuilder.js';
+  import {crewValidator} from '../crewValidator.js';
   import {location, push, replace} from 'svelte-spa-router'
 
   import recruits from '../data/recruits.json'
+  import Menu from "../Menu.svelte";
 
   export let params = {}
 
-	let crew = params.crew === 'new' ? crewBuilder.create("",0) : store.crews.find(c => c.id === params.crew)
-	let show
+  let crew = params.crew === 'new' ? crewBuilder.create("", 0) : store.crews.find(c => c.id === params.crew)
+  let show
   let edit = $location.endsWith('edit')
-	let compact = true
+  let compact = true
 
-	crew = crewValidator.validateModel(crew)
+  crew = crewValidator.validateModel(crew)
 
-	let nonLeaders = recruits.filter(r => r.name !== "Leader")
+  let nonLeaders = recruits.filter(r => r.name !== "Leader")
 
-	let selectedRecruit
+  let selectedRecruit
   let exportString
 
-	function saveCrew() {
-	  let index = store.crews.findIndex(c => c.id === crew.id)
-	  if (index !== -1) {
-	    store.crews.splice(index, 1, crew)
-	  } else {
-	    store.crews.push(crew)
-	  }
-	  store.save(store.crews)
+  function saveCrew() {
+    let index = store.crews.findIndex(c => c.id === crew.id)
+    if (index !== -1) {
+      store.crews.splice(index, 1, crew)
+    } else {
+      store.crews.push(crew)
+    }
+    store.save(store.crews)
     replace('/crew/' + crew.id + '/edit')
-	}
+  }
 
   function updateStat(stat, member) {
-      crew = crewBuilder.updateK(crew)
-      member = crewValidator.validateMember(member)
-      crew = crewValidator.validateStat(stat, member, crew)
+    crew = crewBuilder.updateK(crew)
+    member = crewValidator.validateMember(member)
+    crew = crewValidator.validateStat(stat, member, crew)
   }
 
   function copyExport() {
-      let copyText = document.querySelector("#exportArea");
-      copyText.select();
-      document.execCommand("copy");
+    let copyText = document.querySelector("#exportArea");
+    copyText.select();
+    document.execCommand("copy");
   }
 </script>
+<Menu click={() => saveCrew()}/>
 <div class="no-print">
-  <button on:click={() => replace('/crew/' + crew.id + '/' + (edit ? 'view' : 'edit'))}>{#if edit}Lock{:else}Edit{/if}</button>
-  <button on:click={() => compact = !compact}>{#if compact}Full{:else}Compact{/if}</button>
+  <button on:click={() => replace('/crew/' + crew.id + '/' + (edit ? 'view' : 'edit'))}>
+    {#if edit}Lock{:else}Edit{/if}
+  </button>
+  <button on:click={() => compact = !compact}>
+    {#if compact}Full{:else}Compact{/if}
+  </button>
   <button on:click={() => push('/print/' + crew.id)}>Print View</button>
   <button on:click={() => exportString = store.exportCrew(crew.id)}>Export</button>
 </div>
@@ -81,7 +87,7 @@
   </div>
 {/if}
 <CrewData bind:crew={crew} bind:edit={edit}/>
-<div class="pagebreak"> </div>
+<div class="pagebreak"></div>
 <div class="grid-container">
   {#each crew.members as member}
     <div class="grid-item">
@@ -96,7 +102,9 @@
             <Photo bind:edit={edit} bind:member={member} bind:crew={crew}/>
           </td>
           <th class="r">Name</th>
-          <td class="l"><TextField bind:value={member.name} edit={edit}/></td>
+          <td class="l">
+            <TextField bind:value={member.name} edit={edit}/>
+          </td>
         </tr>
         <tr>
           <th class="r">Faction</th>
@@ -104,19 +112,31 @@
         </tr>
         <tr>
           <th class="r">Wounds</th>
-          <td class="l"><TextField bind:value={member.wounds} edit={edit} type="number" change={() => updateStat("wounds", member)}/></td>
+          <td class="l">
+            <TextField bind:value={member.wounds} edit={edit} type="number"
+                       change={() => updateStat("wounds", member)}/>
+          </td>
         </tr>
         <tr>
           <th class="r">Combat XP</th>
-          <td class="l"><TextField bind:value={member.cost} edit={edit} type="number" change={() => updateStat("cost", member)}/> {#if !compact}({member.experience}){/if}</td>
+          <td class="l">
+            <TextField bind:value={member.cost} edit={edit} type="number" change={() => updateStat("cost", member)}/>
+            {#if !compact}({member.experience}){/if}
+          </td>
         </tr>
         <tr>
           <th class="r">Movement</th>
-          <td class="l"><TextField bind:value={member.movement} edit={edit} type="number" change={() => updateStat("movement", member)}/></td>
+          <td class="l">
+            <TextField bind:value={member.movement} edit={edit} type="number"
+                       change={() => updateStat("movement", member)}/>
+          </td>
         </tr>
         <tr>
           <th class="r">Combat Ability</th>
-          <td class="l"><TextField bind:value={member.combatAbility} edit={edit} type="number" change={() => updateStat("combatAbility", member)}/></td>
+          <td class="l">
+            <TextField bind:value={member.combatAbility} edit={edit} type="number"
+                       change={() => updateStat("combatAbility", member)}/>
+          </td>
         </tr>
         <tr>
           <th class="r">Armor</th>
@@ -124,7 +144,9 @@
         </tr>
         <tr>
           <th class="r">Will</th>
-          <td class="l"><TextField bind:value={member.will} edit={edit} type="number" change={() => updateStat("will", member)}/></td>
+          <td class="l">
+            <TextField bind:value={member.will} edit={edit} type="number" change={() => updateStat("will", member)}/>
+          </td>
         </tr>
       </table>
       <Skills bind:crew={crew} bind:member={member} bind:compact={compact} bind:edit={edit}/>
@@ -140,7 +162,7 @@
           </td>
         </tr>
       </table>
-      <div class="pagebreak"> </div>
+      <div class="pagebreak"></div>
     </div>
   {/each}
 </div>
@@ -161,20 +183,24 @@
     text-align: right;
     width: 20%;
   }
+
   td.l {
     text-align: left;
     width: 20%;
     padding-left: 10px;
   }
+
   .hide {
     display: none;
   }
+
   .export {
     width: 50%;
     margin: 0 auto;
   }
+
   .expString {
-    word-wrap:break-word;
+    word-wrap: break-word;
     width: 100%;
     height: 100px;
   }

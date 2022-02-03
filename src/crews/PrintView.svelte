@@ -11,7 +11,8 @@
     import {crewValidator} from '../crewValidator.js';
 
     import recruits from '../data/recruits.json'
-    import {location, push} from "svelte-spa-router";
+    import {push} from "svelte-spa-router";
+    import Menu from "../Menu.svelte";
 
     export let params = {}
 
@@ -37,6 +38,7 @@
         store.save(store.crews)
     }
 </script>
+<Menu click={() => saveCrew()}/>
 <div class="no-print">
   <button on:click={() => push('/crew/' + crew.id + '/edit')}>Back</button>
   <button on:click={() => window.print()}>Print</button>

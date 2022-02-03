@@ -1,7 +1,6 @@
 <script>
-  import Crew from './crews/Crew.svelte';
   import {store} from './store.js';
-	import {crewBuilder} from './crewBuilder.js';
+	import Menu from "./Menu.svelte";
 
 	let crewList = store.crews;
 
@@ -29,6 +28,7 @@
   }
 </script>
 
+<Menu/>
 <ul>
 	{#each crewList as eCrew}
 		<li>
