@@ -11,7 +11,7 @@
     import {crewValidator} from '../crewValidator.js';
 
     import recruits from '../data/recruits.json'
-    import {location} from "svelte-spa-router";
+    import {location, push} from "svelte-spa-router";
 
     export let params = {}
 
@@ -37,6 +37,10 @@
         store.save(store.crews)
     }
 </script>
+<div class="no-print">
+  <button on:click={() => push('/crew/' + crew.id + '/edit')}>Back</button>
+  <button on:click={() => window.print()}>Print</button>
+</div>
 <CrewData crew={crew} print="true"/>
 <div class="pagebreak"> </div>
 {#each crew.members as member, i}
