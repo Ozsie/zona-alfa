@@ -50,6 +50,9 @@ let addWeapon = (weaponId, weaponOption, member, crew) => {
   weapon.option = weaponOption
   member.weapons = [...member.weapons, weapon]
   member.options[weaponOption]--
+  if (weapon.category === 'support') {
+    member.movement = member.movement > 1 ? member.movement - 1 : 1
+  }
   return crew
 }
 
@@ -57,6 +60,9 @@ let removeWeapon = (weapon, member, crew) => {
   let index = member.weapons.findIndex(w => w === weapon);
   member.weapons.splice(index, 1)
   member.options[weapon.option]++
+  if (weapon.category === 'support') {
+    member.movement = member.movement + 1
+  }
   return crew
 }
 
