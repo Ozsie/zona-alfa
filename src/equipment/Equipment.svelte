@@ -12,9 +12,21 @@
   export let crew
   export let member
 
-  let basicEquipment = equipment.filter(e => e.category === "basic");
-  let selectedEquipment;
-  let selectedArmor;
+  let basicEquipment = equipment.filter(e => e.category === "basic")
+  let selectedStartEquipment = crew.options.startingEquipment[0].id
+  let selectedEquipment
+  let selectedArmor
+
+  let selectStartingEquipment = () => {
+    console.log("selectedStartEquipment")
+    crew = crewBuilder.addStartingEquipment(selectedStartEquipment, member, crew)
+    selectedStartEquipment = crew.options.startingEquipment[0].id
+    console.log(selectedStartEquipment)
+  }
+
+  $: if (crew.faction) {
+    selectedStartEquipment = crew.options.startingEquipment[0].id
+  }
 </script>
 <table>
   <tr class="wide">
@@ -47,6 +59,41 @@
           {/if}
         </div>
       {/each}
+      {#each member.startingEquipment as equipment}
+        <div>
+          <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeStartingEquipment(equipment, member, crew)}/>
+          {#if compact && equipment.rules}
+            <span class="listHeader">{equipment.name}:</span>
+            {#each equipment.rules as rule, i}
+              <span>{rule}</span>
+              {#if i < equipment.rules.length - 1}
+                <br>
+              {/if}
+            {/each}
+          {:else if compact}
+            <span class="listHeader">{equipment.name}:</span>
+            {#each equipment.effects as effect, i}
+              <span>{effect}</span>
+              {#if i < equipment.effects.length - 1}
+                <br>
+              {/if}
+            {/each}
+          {:else}
+            <span class="listHeader">{equipment.name}:</span> {equipment.description}
+          {/if}
+        </div>
+      {/each}
+
+      {#if crew.options.startingEquipment.length > 0 && edit}
+        <label for="startingEquipment">Add starting equipment</label>
+        <select bind:value={selectedStartEquipment} id="startingEquipment">
+          {#each crew.options.startingEquipment as newEquipment}
+            <option value="{newEquipment.id}">{newEquipment.name}</option>
+          {/each}
+        </select>
+        <button on:click={selectStartingEquipment}>Add</button>
+        <span>{selectedStartEquipment}</span>
+      {/if}
 
       {#if member.options.basicEquipment > 0 && edit}
         <label for="basicEquipment">Add basic equipment</label>
@@ -55,7 +102,7 @@
             <option value="{newEquipment.id}">{newEquipment.name}</option>
           {/each}
         </select>
-        <button on:click={() => crew = crewBuilder.addBasicEquipment(selectedEquipment, member, crew)}>Add</button>
+        <button on:click={() => crew = crewBuilder.addBasicEquipment(selectedStartEquipment, member, crew)}>Add</button>
       {/if}
       {#if member.options.armor === 1 && edit}
         <label for="armor">Add armor</label>

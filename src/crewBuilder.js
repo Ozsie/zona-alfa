@@ -14,7 +14,10 @@ let create = (name, factionId) => {
     "faction": faction,
     "k": 3,
     "members": [leader],
-    "notes": ""
+    "notes": "",
+    "options": {
+      "startingEquipment": faction.startingEquipment
+    }
   }
 }
 
@@ -88,6 +91,22 @@ let removeSkill = (skill, member, crew) => {
   return crew
 }
 
+let addStartingEquipment = (equipmentId, member, crew) => {
+  let equipment = crew.options.startingEquipment.find((item) => item.id === equipmentId)
+  member.startingEquipment = [...member.startingEquipment, equipment]
+  const index = crew.options.startingEquipment.indexOf(equipment)
+  crew.options.startingEquipment.splice(index, 1)
+  return crew
+}
+
+let removeStartingEquipment = (equipment, member, crew) => {
+  let index = member.startingEquipment.findIndex(e => e === equipment);
+  member.startingEquipment.splice(index, 1)
+  crew.options.startingEquipment.push(equipment)
+  console.log(crew)
+  return crew
+}
+
 let addBasicEquipment = (equipmentId, member, crew) => {
   let equipment = JSON.parse(JSON.stringify(findEquipment(equipmentId)));
   member.equipment = [...member.equipment, equipment]
@@ -121,6 +140,8 @@ let removePhoto = (member, crew) => {
 
 let changeFaction = (factionId, crew) => {
   crew.faction = createFaction(factionId)
+  crew.options.startingEquipment = crew.faction.startingEquipment
+  crew.members.forEach((member) => member.startingEquipment = [])
   return crew
 }
 
@@ -162,6 +183,7 @@ let createMember = (recruitId, factionName) => {
   member.weapons = []
   member.skills = []
   member.notes = ""
+  member.startingEquipment = []
 
   return member
 }
@@ -207,6 +229,7 @@ export var crewBuilder = {
   create,
   addRecruit,
   addSkill,
+  addStartingEquipment,
   addBasicEquipment,
   addWeapon,
   addArmor,
@@ -214,6 +237,7 @@ export var crewBuilder = {
   removeMember,
   removeSkill,
   removeEquipment,
+  removeStartingEquipment,
   removeWeapon,
   updateK,
   changeFaction,

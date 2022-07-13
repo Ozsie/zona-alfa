@@ -18,6 +18,7 @@
   export let params = {}
 
   let crew = params.crew === 'new' ? crewBuilder.create("", 0) : store.crews.find(c => c.id === params.crew)
+  console.log(crew)
   let show
   let edit = $location.endsWith('edit')
   let compact = true
