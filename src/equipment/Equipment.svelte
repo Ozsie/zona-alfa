@@ -92,7 +92,6 @@
           {/each}
         </select>
         <button on:click={selectStartingEquipment}>Add</button>
-        <span>{selectedStartEquipment}</span>
       {/if}
 
       {#if member.options.basicEquipment > 0 && edit}
@@ -102,7 +101,7 @@
             <option value="{newEquipment.id}">{newEquipment.name}</option>
           {/each}
         </select>
-        <button on:click={() => crew = crewBuilder.addBasicEquipment(selectedStartEquipment, member, crew)}>Add</button>
+        <button on:click={() => crew = crewBuilder.addBasicEquipment(selectedEquipment, member, crew)}>Add</button>
       {/if}
       {#if member.options.armor === 1 && edit}
         <label for="armor">Add armor</label>
