@@ -16,9 +16,9 @@
   let meleeWeapons = weapons.filter(w => w.category !== "grenade").filter(w => w.range.min === 0);
   let grenades = weapons.filter(w => w.category === "grenade");
 
-  let selectedRangedWeapon = 0;
-  let selectedMeleeWeapon = 0;
-  let selectedGrenade = 0;
+  let selectedRangedWeapon = rangedWeapons[0].id;
+  let selectedMeleeWeapon = meleeWeapons[0].id;
+  let selectedGrenade = grenades[0].id;
 </script>
 <table>
   <tr>

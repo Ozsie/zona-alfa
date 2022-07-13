@@ -13,19 +13,27 @@
   export let member
 
   let basicEquipment = equipment.filter(e => e.category === "basic")
-  let selectedStartEquipment = crew.options.startingEquipment[0].id
+  let selectedStartEquipment
   let selectedEquipment
   let selectedArmor
+
+  let resetSelectedStartEquipment = () => {
+    if (crew.options.startingEquipment[0]) {
+      selectedStartEquipment = crew.options.startingEquipment[0].id
+    }
+  }
 
   let selectStartingEquipment = () => {
     console.log("selectedStartEquipment")
     crew = crewBuilder.addStartingEquipment(selectedStartEquipment, member, crew)
-    selectedStartEquipment = crew.options.startingEquipment[0].id
+    resetSelectedStartEquipment()
     console.log(selectedStartEquipment)
   }
 
+  resetSelectedStartEquipment()
+
   $: if (crew.faction) {
-    selectedStartEquipment = crew.options.startingEquipment[0].id
+    resetSelectedStartEquipment()
   }
 </script>
 <table>
