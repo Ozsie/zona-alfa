@@ -11,6 +11,12 @@ let validateModel = (crew) => {
   if (!crew.artifacts) {
     crew.artifacts = ""
   }
+  if (!crew.options) {
+    crew.options = {}
+  }
+  if (!crew.options.startingEquipment) {
+    crew.options.startingEquipment = crew.faction.startingEquipment
+  }
 
   return crew
 }
