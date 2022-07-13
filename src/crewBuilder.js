@@ -21,30 +21,51 @@ let create = (name, factionId) => {
   }
 }
 
-let updateK = (crew) => {
-  let base = crew.members.map(m => m.cost).reduce((accumulator, currentValue) => accumulator + currentValue);
+let updateK = (crew, debug) => {
+  if (debug) {
+    console.log("Updating K")
+    console.log(" current:         ", crew.k)
+    console.log(" new:")
+  }
+  let crewCost = crew.members.map(m => m.cost)
+  let base = crewCost.reduce((accumulator, currentValue) => accumulator + currentValue);
   let upgrades = crew.members.map(m => {
     let template = findRecruit(m.id);
     let moveDiff = m.movement - template.movement;
+    if (m.weapons.filter(w => w.category === "support").length !== 0) {
+      moveDiff = (m.movement + 1) - template.movement;
+    }
     let caDiff = m.combatAbility - template.combatAbility;
     let willDiff = m.will - template.will;
+    if (debug) {
+      console.log("  member " + m.name + ": ", m.experience)
+      console.log("   cost          = " + m.cost)
+      console.log("   move          = " + moveDiff)
+      console.log("   combatAbility = " + caDiff)
+      console.log("   will          = " + willDiff)
+    }
     return moveDiff + caDiff + willDiff
   }).reduce((accumulator, currentValue) => accumulator + currentValue);
   crew.k = base + upgrades
+  if (debug) {
+    console.log("  base:           ", base)
+    console.log("  upgrades:       ", upgrades)
+    console.log(" new:             ", crew.k)
+  }
   return crew
 }
 
-let addRecruit = (recruitId, crew) => {
+let addRecruit = (recruitId, crew, debug) => {
   let recruit = createMember(recruitId, crew.faction.name);
 
   crew.members.push(recruit)
-  return updateK(crew)
+  return updateK(crew, debug)
 }
 
-let removeMember = (member, crew) => {
+let removeMember = (member, crew, debug) => {
   let index = crew.members.findIndex(m => m === member);
   crew.members.splice(index, 1)
-  return updateK(crew)
+  return updateK(crew, debug)
 }
 
 let addWeapon = (weaponId, weaponOption, member, crew) => {

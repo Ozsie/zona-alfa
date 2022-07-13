@@ -73,7 +73,7 @@
         <option value="{newRecruit.id}">{newRecruit.name}</option>
       {/each}
     </select>
-    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
+    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew, debug)}>Add</button>
   </div>
   <button on:click={saveCrew}>Save</button>
 {/if}
@@ -96,7 +96,7 @@
       <table>
         <tr class="no-print {edit ? '' : 'hide'}">
           <td colspan="3">
-            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew)}/>
+            <RemoveButton bind:edit={edit} click={() => crew = crewBuilder.removeMember(member, crew, debug)}/>
           </td>
         </tr>
         <tr>
@@ -176,7 +176,7 @@
         <option value="{newRecruit.id}">{newRecruit.name}</option>
       {/each}
     </select>
-    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
+    <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew, debug)}>Add</button>
   </div>
   <button on:click={saveCrew}>Save</button>
   <button on:click={() => debug = !debug}>Debug</button>
