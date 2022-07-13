@@ -22,6 +22,7 @@
   let show
   let edit = $location.endsWith('edit')
   let compact = true
+  let debug = false
 
   crew = crewValidator.validateModel(crew)
 
@@ -178,6 +179,10 @@
     <button on:click={() => crew = crewBuilder.addRecruit(selectedRecruit, crew)}>Add</button>
   </div>
   <button on:click={saveCrew}>Save</button>
+  <button on:click={() => debug = !debug}>Debug</button>
+  {#if debug}
+    <div>{JSON.stringify(crew, null, 2)}</div>
+  {/if}
 {/if}
 <style>
   th.r {
