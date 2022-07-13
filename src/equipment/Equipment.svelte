@@ -12,6 +12,8 @@
   export let crew
   export let member
 
+  console.log(crew)
+
   let basicEquipment = equipment.filter(e => e.category === "basic")
   let selectedStartEquipment
   let selectedEquipment
