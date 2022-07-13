@@ -46,6 +46,10 @@ let validateMember = (member) => {
   member.skills.forEach(validateSkill)
   member.weapons.forEach(w => validateWeapon(w, member))
   member.equipment.forEach(e => validateEquipment(e))
+  if (!member.startingEquipment) {
+    console.log("  adding starting equipment")
+    member.startingEquipment = []
+  }
   if (!member.notes) {
     console.log("  adding notes")
     member.notes = ""
