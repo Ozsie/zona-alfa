@@ -144,12 +144,13 @@ let addArmor = (armorId, member, crew) => {
 }
 
 let removeEquipment = (equipment, member, crew) => {
+  let isArmor = equipment.armor !== undefined
   let index = member.equipment.findIndex(e => e === equipment);
   member.equipment.splice(index, 1)
-  if (!equipment.armor) {
-    member.options.basicEquipment++
-  } else {
+  if (isArmor) {
     member.options.armor = 1
+  } else {
+    member.options.basicEquipment++
   }
   return crew
 }
