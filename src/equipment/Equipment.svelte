@@ -124,3 +124,8 @@
     </td>
   </tr>
 </table>
+<style>
+  .print {
+    height: 110px;
+  }
+</style>
