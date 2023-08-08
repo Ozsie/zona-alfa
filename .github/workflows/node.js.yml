@@ -28,9 +28,10 @@ jobs:
       run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     - name: Get git hash
       id: hash
-      run: echo "::set-output name=hash::§(git rev-parse --short HEAD)"
+      run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"
     - run: |
         echo {"date": "${{ steps.date.outputs.date }}","hash": "${{ steps.hash.outputs.hash }}"} > buildInfo.js
+        cat buildInfo.js
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test --if-present
