@@ -30,7 +30,11 @@ jobs:
       id: hash
       run: echo "::set-output name=hash::$(git rev-parse --short HEAD)"
     - run: |
-        echo {"date": "${{ steps.date.outputs.date }}","hash": "${{ steps.hash.outputs.hash }}"} > buildInfo.json
+        cat << EOF > buildInfo.json
+        {"date": "${{ steps.date.outputs.date }}","hash": "${{ steps.hash.outputs.hash }}"}
+        EOF
+    - name: Check build info
+      run: |
         cat buildInfo.json
         cp buildInfo.json public/buildInfo.json
     - run: npm ci
