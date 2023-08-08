@@ -30,7 +30,7 @@
       from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
     </div>
     <div class="no-print">
-      {buildInfo.date} | <a href="https://github.com/Ozsie/zona-alfa/commit/{buildInfo.hash}">{buildInfo.hash}</a> | Zona Alfa Crew Builder © {new Date().getFullYear()} Oscar Djupfeldt
+      {buildInfo.date} | <a href="https://github.com/Ozsie/zona-alfa/commit/{buildInfo.hash}">{buildInfo.hash}</a> | <a href="https://github.com/Ozsie/zona-alfa">Zona Alfa Crew Builder © {new Date().getFullYear()} Oscar Djupfeldt</a>
     </div>
   </div>
 </main>
