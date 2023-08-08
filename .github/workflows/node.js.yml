@@ -32,7 +32,7 @@ jobs:
     - run: |
         echo {"date": "${{ steps.date.outputs.date }}","hash": "${{ steps.hash.outputs.hash }}"} > buildInfo.json
         cat buildInfo.json
-        cp buildInfo.js public/buildInfo.json
+        cp buildInfo.json public/buildInfo.json
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test --if-present
