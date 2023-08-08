@@ -1,6 +1,7 @@
 <script>
   import Router from 'svelte-spa-router'
   import routes from './routes'
+  import buildInfo from './buildInfo.json'
 </script>
 
 <main>
@@ -27,6 +28,9 @@
       <a href="https://www.freepik.com" title="Freepik" target="_blank">Freepik</a>
       <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" target="_blank">Pixel perfect</a>
       from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank">www.flaticon.com</a>
+    </div>
+    <div class="no-print">
+      {buildInfo.date} | <a href="https://github.com/Ozsie/zona-alfa/commit/{buildInfo.hash}">{buildInfo.hash}</a> | Zona Alfa Crew Builder © {new Date().getFullYear()} Oscar Djupfeldt
     </div>
   </div>
 </main>
