@@ -18,6 +18,7 @@
   let selectedStartEquipment
   let selectedEquipment
   let selectedArmor
+  let faction = crew.faction
 
   let resetSelectedStartEquipment = () => {
     if (crew.options.startingEquipment[0]) {
@@ -26,7 +27,7 @@
   }
 
   let selectStartingEquipment = () => {
-    console.log("selectedStartEquipment")
+    console.log("selectedStartEquipment: " + selectedStartEquipment)
     crew = crewBuilder.addStartingEquipment(selectedStartEquipment, member, crew)
     resetSelectedStartEquipment()
     console.log(selectedStartEquipment)
@@ -34,9 +35,7 @@
 
   resetSelectedStartEquipment()
 
-  $: if (crew.faction) {
-    resetSelectedStartEquipment()
-  }
+  $: if (crew.faction !== faction) resetSelectedStartEquipment()
 </script>
 <table>
   <tr class="wide">
@@ -125,8 +124,3 @@
     </td>
   </tr>
 </table>
-<style>
-  .print {
-    height: 110px;
-  }
-</style>
